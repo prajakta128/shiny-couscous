@@ -1,0 +1,211 @@
+{% extends "base.html" %}
+
+{% block title %}Home - HealthHub{% endblock %}
+
+{% block styles %}
+<style>
+    /* Dark Mode Fixes for Inline Styled Elements */
+    .dark-mode section[style*="background: linear-gradient"] {
+        background: linear-gradient(135deg, rgba(0, 216, 149, 0.15) 0%, rgba(58, 167, 232, 0.15) 100%) !important;
+    }
+
+    .dark-mode h2[style*="color"],
+    .dark-mode p[style*="color"],
+    .dark-mode h3[style*="color"] {
+        color: #e8e8e8 !important;
+    }
+
+    .dark-mode section:nth-of-type(4) {
+        background: linear-gradient(135deg, rgba(0, 216, 149, 0.15) 0%, rgba(58, 167, 232, 0.15) 100%) !important;
+    }
+
+    .dark-mode section:nth-of-type(4) h2 {
+        color: #ffffff !important;
+    }
+
+    .dark-mode section:nth-of-type(4) p {
+        color: #b8b8b8 !important;
+    }
+
+    /* Dark Mode for Emergency & Finance Section */
+    .dark-mode div[style*="background: linear-gradient(135deg, rgba(231, 76, 60"]::before {
+        background: #1f1f1f !important;
+    }
+
+    .dark-mode div[style*="background: linear-gradient(135deg, #e74c3c"] {
+        background: linear-gradient(135deg, #c0392b 0%, #a93226 100%) !important;
+    }
+
+    .dark-mode div[style*="background: linear-gradient(135deg, #00b88a"] {
+        background: linear-gradient(135deg, #008f6b 0%, #0660a8 100%) !important;
+    }
+
+    .dark-mode div[style*="background: linear-gradient(135deg, #9b59b6"] {
+        background: linear-gradient(135deg, #7a3e7d 0%, #6c3483 100%) !important;
+    }
+
+    .dark-mode a[style*="background: white"][style*="color:"] {
+        background: #2d2d2d !important;
+        color: #ffffff !important;
+    }
+
+    .dark-mode a[style*="background: white"]:hover {
+        background: #404040 !important;
+    }
+
+    /* CTA Section Dark Mode */
+    .dark-mode section[style*="padding: 80px 20px; text-align: center; background: linear-gradient"] {
+        background: linear-gradient(135deg, #008f6b 0%, #0660a8 100%) !important;
+    }
+
+    .dark-mode section[style*="padding: 80px 20px; text-align: center; background: linear-gradient"] h2,
+    .dark-mode section[style*="padding: 80px 20px; text-align: center; background: linear-gradient"] p {
+        color: #ffffff !important;
+    }
+</style>
+{% endblock %}
+{% block content %}
+
+<!-- Hero Section -->
+<section class="container">
+    <div class="hero">
+        <div class="hero-content">
+            <h1>Your Health, Our Priority</h1>
+            <p>Welcome to HealthHub - Your trusted companion for comprehensive health information, government schemes, hospital directories, and personalized wellness guidance. Empowering you to take control of your health journey.</p>
+            <div class="hero-buttons">
+                <a href="/chat" class="btn btn-primary">
+                    <i class="fas fa-robot"></i> Talk to AI Doctor
+                </a>
+                <a href="/topics" class="btn btn-secondary">
+                    <i class="fas fa-book"></i> Explore Topics
+                </a>
+            </div>
+        </div>
+        <div class="hero-image">
+            <svg width="100%" height="400" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+                <!-- Simplified health illustration -->
+                <defs>
+                    <linearGradient id="gradient1" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" style="stop-color:#00b88a;stop-opacity:0.2" />
+                        <stop offset="100%" style="stop-color:#0984e3;stop-opacity:0.2" />
+                    </linearGradient>
+                </defs>
+                <circle cx="200" cy="200" r="150" fill="url(#gradient1)"/>
+                <circle cx="200" cy="180" r="60" fill="#00b88a" opacity="0.3"/>
+                <rect x="170" y="260" width="60" height="80" rx="10" fill="#0984e3" opacity="0.3"/>
+                <text x="200" y="210" font-size="48" text-anchor="middle" fill="#00b88a">❤️</text>
+            </svg>
+        </div>
+    </div>
+</section>
+
+<!-- Stats Section -->
+
+
+<!-- Features Section -->
+<section class="features-section">
+    <div class="container">
+        <h2 class="section-title">Our Core Features</h2>
+        <div class="cards-grid">
+            <div class="card">
+                <div class="card-icon"><i class="fas fa-robot"></i></div>
+                <h3>AI Health Assistant</h3>
+                <p>Chat with our intelligent AI doctor for personalized health advice and medical information anytime.</p>
+                <a href="/chat" class="card-link">Start Chat <i class="fas fa-arrow-right"></i></a>
+            </div>
+            <div class="card">
+                <div class="card-icon"><i class="fas fa-book-medical"></i></div>
+                <h3>Health Topics</h3>
+                <p>Explore comprehensive articles on various health conditions, prevention tips, and wellness guides.</p>
+                <a href="/topics" class="card-link">Browse Topics <i class="fas fa-arrow-right"></i></a>
+            </div>
+            <div class="card">
+                <div class="card-icon"><i class="fas fa-file-contract"></i></div>
+                <h3>Gov. Schemes</h3>
+                <p>Discover and learn about government health schemes with eligibility criteria and benefits.</p>
+                <a href="/schemes" class="card-link">View Schemes <i class="fas fa-arrow-right"></i></a>
+            </div>
+            <div class="card">
+                <div class="card-icon"><i class="fas fa-hospital"></i></div>
+                <h3>Hospital Directory</h3>
+                <p>Find trusted hospitals in Pune with contact info, specialties, and detailed facility information.</p>
+                <a href="/hospitals" class="card-link">Find Hospital <i class="fas fa-arrow-right"></i></a>
+            </div>
+            <div class="card">
+                <div class="card-icon"><i class="fas fa-heart"></i></div>
+                <h3>Wellness Hub</h3>
+                <p>Access wellness categories, meditation guides, yoga, nutrition tips, and personalized health resources.</p>
+                <a href="/wellness" class="card-link">Explore Wellness <i class="fas fa-arrow-right"></i></a>
+            </div>
+            <div class="card">
+                <div class="card-icon"><i class="fas fa-dumbbell"></i></div>
+                <h3>AI Gym Trainer</h3>
+                <p>Personalized fitness routines, workout plans, and exercise guidance powered by artificial intelligence.</p>
+                <a href="/gym" class="card-link">Start Training <i class="fas fa-arrow-right"></i></a>
+            </div>
+            <div class="card">
+                <div class="card-icon"><i class="fas fa-money-bill-wave"></i></div>
+                <h3>Finance Services</h3>
+                <p>Health insurance plans, medical fundraising platforms, and online medicine orders all in one place.</p>
+                <a href="/finance" class="card-link">View Services <i class="fas fa-arrow-right"></i></a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Emergency & Quick Actions Section -->
+<section style="padding: 60px 20px; background: linear-gradient(135deg, rgba(231, 76, 60, 0.05) 0%, rgba(244, 208, 63, 0.05) 100%);">
+    <div class="container">
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px;">
+            <!-- Emergency Services Card -->
+            <div style="background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%); color: white; padding: 40px; border-radius: 15px; box-shadow: 0 10px 30px rgba(231, 76, 60, 0.3); text-align: center; transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 15px 40px rgba(231, 76, 60, 0.4)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 10px 30px rgba(231, 76, 60, 0.3)';">
+                <div style="font-size: 3rem; margin-bottom: 15px;">🚨</div>
+                <h3 style="margin: 0 0 12px 0; font-size: 1.5rem;">Emergency Services</h3>
+                <p style="margin: 0 0 20px 0; font-size: 0.95rem; opacity: 0.95;">One-click access to 112 and other emergency numbers for immediate medical help</p>
+                <a href="/emergency" style="display: inline-block; padding: 12px 30px; background: white; color: #e74c3c; text-decoration: none; border-radius: 25px; font-weight: 600; transition: all 0.3s ease;" onmouseover="this.style.transform='scale(1.05)';" onmouseout="this.style.transform='scale(1)';">
+                    <i class="fas fa-phone-alt"></i> Dial 112 Now
+                </a>
+            </div>
+
+            <!-- Finance Services Card -->
+            <div style="background: linear-gradient(135deg, #00b88a 0%, #0984e3 100%); color: white; padding: 40px; border-radius: 15px; box-shadow: 0 10px 30px rgba(0, 184, 138, 0.3); text-align: center; transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 15px 40px rgba(0, 184, 138, 0.4)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 10px 30px rgba(0, 184, 138, 0.3)';">
+                <div style="font-size: 3rem; margin-bottom: 15px;">💳</div>
+                <h3 style="margin: 0 0 12px 0; font-size: 1.5rem;">Healthcare Finance</h3>
+                <p style="margin: 0 0 20px 0; font-size: 0.95rem; opacity: 0.95;">Insurance plans, medical fundraising, and online medicine orders from trusted providers</p>
+                <a href="/finance" style="display: inline-block; padding: 12px 30px; background: white; color: #00b88a; text-decoration: none; border-radius: 25px; font-weight: 600; transition: all 0.3s ease;" onmouseover="this.style.transform='scale(1.05)';" onmouseout="this.style.transform='scale(1)';">
+                    <i class="fas fa-credit-card"></i> Explore Finance
+                </a>
+            </div>
+
+            <!-- Health Tips Card -->
+            <div style="background: linear-gradient(135deg, #9b59b6 0%, #8e44ad 100%); color: white; padding: 40px; border-radius: 15px; box-shadow: 0 10px 30px rgba(155, 89, 182, 0.3); text-align: center; transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 15px 40px rgba(155, 89, 182, 0.4)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 10px 30px rgba(155, 89, 182, 0.3)';">
+                <div style="font-size: 3rem; margin-bottom: 15px;">💡</div>
+                <h3 style="margin: 0 0 12px 0; font-size: 1.5rem;">Daily Health Tips</h3>
+                <p style="margin: 0 0 20px 0; font-size: 0.95rem; opacity: 0.95;">Get personalized wellness recommendations, fitness tips, and health advice every day</p>
+                <a href="/wellness" style="display: inline-block; padding: 12px 30px; background: white; color: #9b59b6; text-decoration: none; border-radius: 25px; font-weight: 600; transition: all 0.3s ease;" onmouseover="this.style.transform='scale(1.05)';" onmouseout="this.style.transform='scale(1)';">
+                    <i class="fas fa-spa"></i> Wellness Tips
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CTA Section -->
+<section style="padding: 80px 20px; text-align: center; background: linear-gradient(135deg, #00b88a 0%, #0984e3 100%); color: white;">
+    <div class="container">
+        <h2 style="font-size: 2.5rem; margin: 0 0 20px 0; font-weight: 700;">Your Complete Health Companion</h2>
+        <p style="font-size: 1.1rem; margin: 0 0 30px 0; opacity: 0.95; max-width: 600px; margin-left: auto; margin-right: auto;">
+            From health information and emergency services to insurance and fitness guidance - HealthHub is your one-stop solution for all healthcare needs.
+        </p>
+        <div style="display: flex; gap: 15px; justify-content: center; flex-wrap: wrap;">
+            <a href="/chat" style="padding: 15px 35px; background: white; color: #00b88a; text-decoration: none; border-radius: 25px; font-weight: 600; transition: all 0.3s ease; display: inline-flex; align-items: center; gap: 10px;" onmouseover="this.style.transform='translateY(-3px)'; this.style.boxShadow='0 10px 25px rgba(0,0,0,0.2)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none';">
+                <i class="fas fa-robot"></i> Chat with AI Doctor
+            </a>
+            <a href="/topics" style="padding: 15px 35px; background: rgba(255,255,255,0.2); color: white; text-decoration: none; border-radius: 25px; font-weight: 600; border: 2px solid white; transition: all 0.3s ease; display: inline-flex; align-items: center; gap: 10px;" onmouseover="this.style.background='white'; this.style.color='#00b88a'; this.style.transform='translateY(-3px)';" onmouseout="this.style.background='rgba(255,255,255,0.2)'; this.style.color='white'; this.style.transform='translateY(0)';">
+                <i class="fas fa-book"></i> Explore Topics
+            </a>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

@@ -1,0 +1,152 @@
+{% extends "base.html" %}
+
+{% block title %}Hospitals Directory - HealthHub{% endblock %}
+
+{% block content %}
+
+<!-- Header Section -->
+<section style="padding: 40px 20px; background: linear-gradient(135deg, rgba(0, 184, 138, 0.1) 0%, rgba(9, 132, 227, 0.1) 100%);">
+    <div class="container">
+        <h1 style="font-family: 'Poppins', sans-serif; font-size: 36px; font-weight: 700; color: var(--text-dark); margin-bottom: 10px;">Hospital Directory</h1>
+        <p style="font-size: 16px; color: var(--text-light); margin-bottom: 30px;">Find trusted hospitals in Pune with complete details, ratings, contact information, and services.</p>
+        
+        <!-- Search -->
+        <div class="filter-search-container">
+            <input type="text" class="filter-input" id="hospitalSearch" placeholder="Search hospital by name or location..." style="flex: 1; min-width: 250px;">
+        </div>
+    </div>
+</section>
+
+<!-- Hospitals List -->
+<section style="padding: 60px 20px;">
+    <div class="container">
+        <div id="hospitalsList" style="display: grid; gap: 20px;">
+            {% for h in hospitals %}
+            <div class="hospital-card" data-name="{{ h.hospital_name | lower }}" data-location="{{ h.Nearest_Location | lower if h.Nearest_Location else '' }}">
+                <div style="display: grid; grid-template-columns: auto 1fr auto; gap: 20px; align-items: start;">
+                    <!-- Hospital Icon -->
+                    <div style="width: 60px; height: 60px; background: linear-gradient(135deg, var(--primary-color), var(--secondary-color)); border-radius: 12px; display: flex; align-items: center; justify-content: center; color: white; font-size: 28px; flex-shrink: 0;">
+                        <i class="fas fa-hospital"></i>
+                    </div>
+
+                    <!-- Hospital Info -->
+                    <div>
+                        <h3 style="font-family: 'Poppins', sans-serif; font-size: 18px; font-weight: 600; color: var(--text-dark); margin-bottom: 8px;">{{ h.hospital_name }}</h3>
+                        
+                        <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 12px; flex-wrap: wrap;">
+                            {% if h.rating %}
+                            <span style="background: rgba(0, 184, 138, 0.1); color: var(--primary-color); padding: 6px 12px; border-radius: 20px; font-size: 13px; font-weight: 600;">
+                                <i class="fas fa-star" style="color: #ffc107;"></i> {{ h.rating }}
+                            </span>
+                            {% endif %}
+                            {% if h.Nearest_Location %}
+                            <span style="display: flex; align-items: center; gap: 5px; color: var(--text-light); font-size: 13px;">
+                                <i class="fas fa-map-marker-alt" style="color: var(--primary-color);"></i> {{ h.Nearest_Location }}
+                            </span>
+                            {% endif %}
+                        </div>
+
+                        <p style="font-size: 14px; color: var(--text-light); margin-bottom: 12px; line-height: 1.5;">
+                            <i class="fas fa-map-pin" style="color: var(--primary-color); margin-right: 8px;"></i>
+                            {{ h.Full_Address or 'Address not available' }}
+                        </p>
+
+                        <p style="font-size: 14px; color: var(--text-dark); margin-bottom: 0;">
+                            <i class="fas fa-phone" style="color: var(--primary-color); margin-right: 8px;"></i>
+                            <strong>{{ h.contact or 'Contact not available' }}</strong>
+                        </p>
+                    </div>
+
+                    <!-- Action Buttons -->
+                    <div style="display: flex; flex-direction: column; gap: 10px;">
+                        <a href="{{ url_for('hospital_detail', hospital_id=h.id) }}" class="btn btn-primary" style="padding: 10px 20px; text-align: center; white-space: nowrap;">
+                            <i class="fas fa-info-circle"></i> Details
+                        </a>
+                        <a href="tel:{{ h.contact or '1234567890' }}" class="btn btn-secondary" style="padding: 10px 20px; text-align: center; white-space: nowrap;">
+                            <i class="fas fa-phone"></i> Call
+                        </a>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        
+        <!-- No Results Message -->
+        <div id="noResults" style="display: none; text-align: center; padding: 60px 20px;">
+            <i class="fas fa-search" style="font-size: 48px; color: var(--text-light); margin-bottom: 20px; display: block;"></i>
+            <h3 style="color: var(--text-dark);">No hospitals found</h3>
+            <p style="color: var(--text-light);">Try adjusting your search criteria.</p>
+        </div>
+    </div>
+</section>
+
+<style>
+    .hospital-card {
+        background: white;
+        border-radius: 12px;
+        padding: 25px;
+        box-shadow: var(--shadow-md);
+        transition: var(--transition);
+        border-left: 5px solid transparent;
+    }
+
+    .hospital-card:hover {
+        box-shadow: var(--shadow-lg);
+        border-left-color: var(--primary-color);
+        transform: translateX(4px);
+    }
+
+    @media (max-width: 768px) {
+        .hospital-card {
+            padding: 15px;
+        }
+
+        .hospital-card > div {
+            grid-template-columns: 1fr !important;
+            gap: 15px !important;
+        }
+
+        .hospital-card > div > div:last-child {
+            display: flex;
+            gap: 10px;
+        }
+
+        .hospital-card > div > div:last-child a {
+            flex: 1;
+            padding: 8px 15px !important;
+        }
+    }
+</style>
+
+<script>
+    // Search Functionality
+    const searchInput = document.getElementById('hospitalSearch');
+    const hospitalsList = document.getElementById('hospitalsList');
+    const noResults = document.getElementById('noResults');
+    const cards = document.querySelectorAll('.hospital-card');
+
+    function filterHospitals() {
+        const searchTerm = searchInput.value.toLowerCase();
+        let visibleCount = 0;
+
+        cards.forEach(card => {
+            const name = card.getAttribute('data-name');
+            const location = card.getAttribute('data-location');
+            
+            const matchesSearch = name.includes(searchTerm) || location.includes(searchTerm);
+            
+            if (matchesSearch) {
+                card.style.display = '';
+                visibleCount++;
+            } else {
+                card.style.display = 'none';
+            }
+        });
+
+        noResults.style.display = visibleCount === 0 ? 'block' : 'none';
+    }
+
+    searchInput.addEventListener('input', filterHospitals);
+</script>
+
+{% endblock %}

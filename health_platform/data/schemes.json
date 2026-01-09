@@ -1,0 +1,301 @@
+[
+  {
+    "id": 1,
+    "name": "Ayushman Bharat – Pradhan Mantri Jan Arogya Yojana (PM-JAY)",
+    "description": "Health insurance coverage up to ₹5 lakh per family annually for vulnerable families; cashless, paperless; portable across India.",
+    "benefits": ["Cashless secondary/tertiary treatment", "Pre- and post-hospitalisation coverage", "Portable across states"],
+    "eligibility": "Vulnerable families as per SECC (2011)",
+    "category": "Public Health Insurance",
+    "how_to_avail": "Check eligibility on PMJAY portal or call 14555; visit empanelled hospital with scheme card + ID for eKYC.",
+    "official_link": "https://pmjay.gov.in",
+    "geography": "All-India (implemented in Maharashtra & Pune)"
+  },
+  {
+    "id": 2,
+    "name": "Rashtriya Swasthya Bima Yojana (RSBY)",
+    "description": "Health insurance scheme for Below Poverty Line (BPL) families with smart cards, offering cashless hospitalisation up to ₹30,000/year.",
+    "benefits": ["Cashless hospitalisation", "Covers pre-existing conditions", "Public & private hospitals"],
+    "eligibility": "BPL families",
+    "category": "Public Health Insurance (earlier scheme)",
+    "how_to_avail": "BPL families were issued biometric smart cards through state roll-out mechanisms.",
+    "official_link": "https://en.wikipedia.org/wiki/Rashtriya_Swasthya_Bima_Yojana",
+    "geography": "All-India (implemented in Maharashtra)"
+  },
+  {
+    "id": 3,
+    "name": "Central Government Health Scheme (CGHS)",
+    "description": "Comprehensive OPD/IPD healthcare for central govt employees and pensioners, including AYUSH treatments.",
+    "benefits": ["OPD & inpatient care", "Diagnostics & medicines", "AYUSH treatments"],
+    "eligibility": "Central government employees/pensioners & dependents in CGHS cities",
+    "category": "Employee Health Coverage",
+    "how_to_avail": "Enroll, collect CGHS card, visit Wellness Centre or empanelled hospital.",
+    "official_link": "https://cghs.gov.in",
+    "geography": "All-India (including Pune) :contentReference[oaicite:0]{index=0}"
+  },
+  {
+    "id": 4,
+    "name": "Employees’ State Insurance Scheme (ESIS / ESI)",
+    "description": "Social health insurance for organised sector employees and their families, including medical, maternity, and cash benefits.",
+    "benefits": ["Medical care", "Maternity benefits", "Disability & sickness cash", "Occupational injury coverage"],
+    "eligibility": "Employees earning ≤ notified wage ceiling in covered establishments",
+    "category": "Employee Health Coverage",
+    "how_to_avail": "Employer registers employees, access services at ESI dispensaries/hospitals with Pehchan/e-Pehchan ID.",
+    "official_link": "https://esic.gov.in",
+    "geography": "All-India (including Maharashtra/Pune)"
+  },
+  {
+    "id": 5,
+    "name": "Ex-Servicemen Contributory Health Scheme (ECHS)",
+    "description": "Cashless healthcare services for retired armed forces personnel and dependents.",
+    "benefits": ["Cashless OPD/IPD in ECHS polyclinics & empanelled hospitals", "Medicines & diagnostics"],
+    "eligibility": "Ex-servicemen & dependents as per ECHS rules",
+    "category": "Employee Health Coverage (Defence)",
+    "how_to_avail": "Register with ECHS, get smart card, access services via ECHS polyclinics.",
+    "official_link": "https://echs.gov.in",
+    "geography": "All-India (including Pune)"
+  },
+  {
+    "id": 6,
+    "name": "Pradhan Mantri Bharatiya Janaushadhi Pariyojana (PMBJP)",
+    "description": "Generic medicines and surgicals at highly subsidised prices through dedicated Jan Aushadhi Kendras.",
+    "benefits": ["Affordable generic medicines", "Quality equivalent to branded drugs"],
+    "eligibility": "All citizens (purchase-oriented)",
+    "category": "Affordable Medicines",
+    "how_to_avail": "Visit nearest Jan Aushadhi Kendra or use app to locate one.",
+    "official_link": "https://janaushadhi.gov.in",
+    "geography": "All-India (present in Maharashtra/Pune) :contentReference[oaicite:1]{index=1}"
+  },
+  {
+    "id": 7,
+    "name": "National Health Mission (NHM)",
+    "description": "Umbrella mission including NRHM (rural) & NUHM (urban) to enhance equitable access to affordable healthcare.",
+    "benefits": ["Free drugs and diagnostics", "Maternal & child health services (JSSK, RBSK)", "Mobile Medical Units, ambulance services"],
+    "eligibility": "General population with focus on vulnerable segments",
+    "category": "Public Health Services",
+    "how_to_avail": "Access via public health facilities like PHCs, UPHCs, HWCs.",
+    "official_link": "https://nhm.gov.in",
+    "geography": "All-India (active in Maharashtra & Pune) :contentReference[oaicite:2]{index=2}"
+  },
+  {
+    "id": 8,
+    "name": "Janani Shishu Suraksha Karyakram (JSSK)",
+    "description": "Provides free delivery, diagnostics, drugs, diet, transport to pregnant women and sick infants up to 1 year at public facilities.",
+    "benefits": ["Free services: delivery, drugs, diagnostics, transport, diet"],
+    "eligibility": "Pregnant women and infants (as per norms)",
+    "category": "Maternal & Child Health",
+    "how_to_avail": "Seek delivery or care at public health facility; entitlements are automatic.",
+    "official_link": "https://nhm.gov.in",
+    "geography": "All-India (including Maharashtra/Pune) :contentReference[oaicite:3]{index=3}"
+  },
+  {
+    "id": 9,
+    "name": "Rashtriya Bal Swasthya Karyakram (RBSK)",
+    "description": "Child & adolescent health screening for four Ds—defects, deficiencies, diseases, development delays; includes referral and management.",
+    "benefits": ["Free screening & treatment or referral"],
+    "eligibility": "Children aged 0–18 years (Anganwadi & school-going)",
+    "category": "Child & Adolescent Health",
+    "how_to_avail": "Screenings via schools/Anganwadis; referrals via district health system.",
+    "official_link": "https://nhm.gov.in",
+    "geography": "All-India (Maharashtra/Pune) :contentReference[oaicite:4]{index=4}"
+  },
+  {
+    "id": 10,
+    "name": "Ayushman Bharat Digital Mission (ABDM)",
+    "description": "Digital health infrastructure with interoperable health IDs, health records, healthcare facility registry.",
+    "benefits": ["Unified digital health records", "Health practitioner/facility registry", "Health ID portability"],
+    "eligibility": "All Indian residents requiring healthcare access",
+    "category": "Digital Health Infrastructure",
+    "how_to_avail": "Register for Health ID via portal/app; share at facilities.",
+    "official_link": "https://abdm.gov.in",
+    "geography": "All-India :contentReference[oaicite:5]{index=5}"
+  },
+  {
+    "id": 11,
+    "name": "Mahatma Jyotiba Phule Jan Arogya Yojana (MJPJAY)",
+    "description": "Maharashtra’s state health insurance scheme offering cashless hospitalization for secondary/tertiary care (state-level top-up to PM-JAY).",
+    "benefits": ["Cashless care up to ~₹1.5 lakh + PM-JAY top-up to ₹5 lakh"],
+    "eligibility": "Eligible ration card holders (Yellow/Orange/AAY etc.) and vulnerable groups",
+    "category": "State Health Insurance",
+    "how_to_avail": "Visit empanelled hospitals with ration card or scheme ID for eKYC and pre-auth.",
+    "official_link": "https://www.jeevandayee.gov.in",
+    "geography": "Maharashtra (including Pune) :contentReference[oaicite:6]{index=6}"
+  },
+  {
+    "id": 12,
+    "name": "Bed Reservation via Indigent Patients Fund (IPF) – Maharashtra",
+    "description": "Mandated 20% free or subsidised beds in private/trust hospitals; fund contributed by hospitals into central digital platform; quick access guarantee.",
+    "benefits": ["Free/subsidised hospital beds", "24-hour allocation via helpline"],
+    "eligibility": "Economically disadvantaged patients",
+    "category": "Access Regulation",
+    "how_to_avail": "Call toll-free helpline; hospitals allocate bed from IPF fund.",
+    "official_link": "state govt notification",
+    "geography": "Maharashtra (including Pune) :contentReference[oaicite:7]{index=7}"
+  },
+  {
+    "id": 13,
+    "name": "Aapla Dawakhana (Under NUHM/PMC)",
+    "description": "Urban primary care clinics offering free OPD, basic diagnostics, maternal/childcare in Pune.",
+    "benefits": ["Free outpatient services", "Basic diagnostics/medicines"],
+    "eligibility": "Urban poor and general public in catchment area",
+    "category": "Primary Care - Urban",
+    "how_to_avail": "Walk-in at operating clinic with minimal ID.",
+    "official_link": "PMC notifications",
+    "geography": "Pune city (limited roll-out) :contentReference[oaicite:8]{index=8}"
+  },
+  {
+    "id": 14,
+    "name": "National AIDS Control Programme (NACP) – ART Services",
+    "description": "Provision of free HIV testing, counselling and antiretroviral treatment via government centres.",
+    "benefits": ["Free HIV testing", "Free ART medicines", "Counselling"],
+    "eligibility": "People living with HIV",
+    "category": "Communicable Diseases – HIV",
+    "how_to_avail": "Visit ICTC or ART centre at public health facility.",
+    "official_link": "https://www.naco.gov.in",
+    "geography": "All-India (Maharashtra/Pune) :contentReference[oaicite:9]{index=9}"
+  },
+  {
+    "id": 15,
+    "name": "National Mental Health Programme (NMHP) / DMHP",
+    "description": "Mental health services including OPD, counselling, psychotropic drugs, IEC at district level.",
+    "benefits": ["OPD/IPD mental health care", "Counselling", "Medicines at govt facilities"],
+    "eligibility": "General population",
+    "category": "Mental Health",
+    "how_to_avail": "Visit District Hospital psychiatry department or DMHP clinic.",
+    "official_link": "https://nhm.gov.in",
+    "geography": "All-India (Maharashtra/Pune) :contentReference[oaicite:10]{index=10}"
+  },
+  {
+    "id": 16,
+    "name": "National Programme for Health Care of the Elderly (NPHCE)",
+    "description": "Geriatric care services including OPD/IPD physiotherapy, home-based care through PHCs and district hospitals.",
+    "benefits": ["Free geriatric OPD/IPD", "Physiotherapy", "Home care"],
+    "eligibility": "Senior citizens (60+)",
+    "category": "Geriatric Care",
+    "how_to_avail": "Visit designated govt facility offering NPHCE services.",
+    "official_link": "https://main.mohfw.gov.in",
+    "geography": "All-India (Maharashtra/Pune) :contentReference[oaicite:11]{index=11}"
+  },
+  {
+    "id": 17,
+    "name": "National TB Elimination Programme (NTEP)",
+    "description": "Free diagnosis and treatment of TB via Nikshay portal; includes nutritional support via Nikshay Poshan Yojana.",
+    "benefits": ["Free testing (CBNAAT etc.)", "Free TB drugs", "Financial support for nutrition"],
+    "eligibility": "Anyone with TB symptoms or diagnosis",
+    "category": "Communicable Diseases – TB",
+    "how_to_avail": "Visit public TB diagnostic centre, register via Nikshay, provide Aadhaar/bank for DBT.",
+    "official_link": "https://tbcindia.gov.in",
+    "geography": "All-India (Maharashtra/Pune)"
+  },
+  {
+    "id": 1,
+    "name": "Ayushman Bharat Yojana",
+    "description": "Health insurance coverage up to ₹5 lakhs per family annually for vulnerable families.",
+    "benefits": ["Free treatment", "Cashless facility", "Pre and post hospitalization"],
+    "eligibility": "Vulnerable families as per SECC database",
+    "category": "Public Health Insurance",
+    "how_to_avail": "Check eligibility on PMJAY portal or call 14555, carry Ayushman card or ration card + Aadhaar to empanelled hospital.",
+    "official_link": "https://pmjay.gov.in",
+    "geography": "All India (Implemented in Maharashtra & Pune)"
+  },
+  {
+    "id": 2,
+    "name": "Pradhan Mantri Jan Arogya Yojana (PM-JAY)",
+    "description": "World's largest health insurance scheme covering over 10 crore families.",
+    "benefits": ["Secondary care", "Tertiary care", "1,393 procedures covered"],
+    "eligibility": "Families identified through SECC 2011",
+    "category": "Public Health Insurance",
+    "how_to_avail": "Search on PMJAY website using ration card or mobile number, visit empanelled hospital for eKYC and cashless treatment.",
+    "official_link": "https://pmjay.gov.in",
+    "geography": "All India (including Maharashtra & Pune)"
+  },
+  {
+    "id": 3,
+    "name": "Rashtriya Swasthya Bima Yojana (RSBY)",
+    "description": "Health insurance scheme for Below Poverty Line families.",
+    "benefits": ["₹30,000 coverage", "Cashless treatment", "Pre-existing conditions covered"],
+    "eligibility": "BPL families and specific occupational groups",
+    "category": "Public Health Insurance (Old Scheme)",
+    "how_to_avail": "Families were issued biometric smart cards to access cashless care at empanelled hospitals.",
+    "official_link": "https://labour.gov.in/rastriya-swasthya-bima-yojana",
+    "geography": "All India (Implemented in Maharashtra districts)"
+  },
+  {
+    "id": 4,
+    "name": "Mahatma Jyotiba Phule Jan Arogya Yojana (MJPJAY)",
+    "description": "Maharashtra’s flagship health insurance scheme offering coverage up to ₹1.5 lakh per family annually.",
+    "benefits": ["Free treatment in empanelled hospitals", "Coverage for critical illnesses", "Covers surgeries and therapies"],
+    "eligibility": "Yellow and Orange ration card holders in Maharashtra",
+    "category": "State Health Insurance",
+    "how_to_avail": "Apply using ration card and Aadhaar at empanelled hospitals in Maharashtra.",
+    "official_link": "https://www.jeevandayee.gov.in",
+    "geography": "Maharashtra (including Pune)"
+  },
+  {
+    "id": 5,
+    "name": "Janani Suraksha Yojana (JSY)",
+    "description": "Safe motherhood intervention under National Health Mission promoting institutional delivery.",
+    "benefits": ["Cash incentives for institutional delivery", "Free delivery services", "Transport assistance"],
+    "eligibility": "Pregnant women below poverty line, SC/ST women",
+    "category": "Maternal & Child Health",
+    "how_to_avail": "Register at local health center/ASHA worker; incentive credited to bank account after institutional delivery.",
+    "official_link": "https://nhm.gov.in",
+    "geography": "All India"
+  },
+  {
+    "id": 6,
+    "name": "Janani Shishu Suraksha Karyakram (JSSK)",
+    "description": "Free healthcare for pregnant women and sick infants.",
+    "benefits": ["Free drugs, diagnostics, diet, transport", "No expense deliveries including C-sections"],
+    "eligibility": "All pregnant women and sick newborns up to 1 year",
+    "category": "Maternal & Child Health",
+    "how_to_avail": "Visit government hospitals/PHCs for free services.",
+    "official_link": "https://nhm.gov.in",
+    "geography": "All India"
+  },
+  {
+    "id": 7,
+    "name": "Pradhan Mantri Bhartiya Janaushadhi Pariyojana (PMBJP)",
+    "description": "Scheme to provide quality generic medicines at affordable prices.",
+    "benefits": ["Low-cost medicines", "Jan Aushadhi Kendras across cities"],
+    "eligibility": "All citizens",
+    "category": "Affordable Medicines",
+    "how_to_avail": "Visit nearest Janaushadhi Kendra; medicines sold at reduced rates.",
+    "official_link": "http://janaushadhi.gov.in",
+    "geography": "All India (Jan Aushadhi stores in Pune)"
+  },
+  {
+    "id": 8,
+    "name": "Central Government Health Scheme (CGHS)",
+    "description": "Comprehensive healthcare scheme for central government employees and pensioners.",
+    "benefits": ["OPD, Specialist consultation", "Hospitalization", "Diagnostics and medicines"],
+    "eligibility": "Central govt. employees, pensioners, MPs, freedom fighters",
+    "category": "Government Employee Health",
+    "how_to_avail": "Apply for CGHS card; avail services at CGHS dispensaries and empanelled hospitals.",
+    "official_link": "https://cghs.gov.in",
+    "geography": "Major cities including Pune"
+  },
+  {
+    "id": 9,
+    "name": "Employees’ State Insurance Scheme (ESIS)",
+    "description": "Healthcare benefits for workers in organized sector.",
+    "benefits": ["Free medical treatment", "Cash benefits for sickness, maternity, disability"],
+    "eligibility": "Employees earning ≤ ₹21,000/month in covered establishments",
+    "category": "Employee Health Insurance",
+    "how_to_avail": "Employer registers employees, ESIC card issued for treatment at ESIC hospitals/dispensaries.",
+    "official_link": "https://www.esic.gov.in",
+    "geography": "All India (ESIC hospitals in Pune)"
+  },
+  {
+    "id": 10,
+    "name": "Aapla Dawakhana (Maharashtra Urban Health Initiative)",
+    "description": "Low-cost urban clinics providing primary healthcare services in Maharashtra cities.",
+    "benefits": ["Free/low-cost consultation", "Essential medicines", "Basic diagnostics"],
+    "eligibility": "Urban poor and general citizens",
+    "category": "Primary Healthcare",
+    "how_to_avail": "Walk-in to nearest Aapla Dawakhana clinic with Aadhaar or ration card.",
+    "official_link": "https://arogya.maharashtra.gov.in",
+    "geography": "Maharashtra (including Pune)"
+  }
+]
+
+

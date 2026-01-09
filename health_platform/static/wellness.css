@@ -1,0 +1,214 @@
+body {
+    font-family: Arial, sans-serif;
+    background: #f9fafb;
+    margin: 0;
+    padding: 0;
+    color: #222;
+    text-align: center;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 50px auto;
+    padding: 20px;
+}
+
+.tag {
+    background: #e5f9ef;
+    color: #16a34a;
+    display: inline-block;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin: 10px 0 20px 0;
+}
+
+.subtitle {
+    color: #555;
+    margin-bottom: 40px;
+    font-size: 1.1rem;
+    line-height: 1.5;
+}
+
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 3 boxes per row */
+    gap: 20px;
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 900px) {
+    .grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 per row on medium screens */
+    }
+}
+
+@media (max-width: 600px) {
+    .grid {
+        grid-template-columns: 1fr; /* 1 per row on small screens */
+    }
+}
+
+.card {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: left;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.label {
+    font-size: 12px;
+    font-weight: bold;
+    display: inline-block;
+    margin-bottom: 10px;
+    padding: 4px 10px;
+    border-radius: 8px;
+    color: #fff;
+    text-transform: uppercase;
+}
+
+.meditation {
+    background: #16a34a;
+}
+
+.yoga {
+    background: #2563eb;
+}
+
+.breathing {
+    background: #9333ea;
+}
+
+.wellness {
+    background: #f97316;
+}
+
+.nutrition {
+    background: #f59e0b;
+}
+
+.sleep {
+    background: #0ea5e9;
+}
+
+.hydration {
+    background: #14b8a6;
+}
+
+.exercise {
+    background: #ef4444;
+}
+
+.mental_health {
+    background: #8b5cf6;
+}
+
+.self_care {
+    background: #ec4899;
+}
+
+.card h3 {
+    margin: 10px 0 10px 0;
+    font-size: 1.25rem;
+}
+
+.time {
+    display: block;
+    font-size: 12px;
+    margin: 10px 0;
+    color: #666;
+}
+
+.card p {
+    font-size: 0.95rem;
+    color: #444;
+    line-height: 1.4;
+    margin-bottom: 10px;
+}
+
+.card a {
+    color: #16a34a;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.card a:hover {
+    color: #0f766e;
+}
+
+.btn {
+    margin-top: 30px;
+    padding: 12px 25px;
+    border: 2px solid #16a34a;
+    background: transparent;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: all 0.3s;
+}
+
+.btn:hover {
+    background: #16a34a;
+    color: #fff;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    overflow-y: auto;
+    padding: 40px 20px;
+}
+
+.modal-content {
+    background: #fff;
+    margin: 5% auto;
+    padding: 30px;
+    width: 80%;
+    max-width: 700px;
+    border-radius: 12px;
+    text-align: left;
+    position: relative;
+    animation: slideDown 0.3s ease;
+}
+
+@keyframes slideDown {
+    from { transform: translateY(-20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+.close {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 24px;
+    font-weight: bold;
+    cursor: pointer;
+    color: #444;
+    transition: color 0.3s;
+}
+
+.close:hover {
+    color: #16a34a;
+}
+
+/* Responsive adjustm*

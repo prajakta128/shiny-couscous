@@ -1,0 +1,122 @@
+/* hospital.css - 3 card layout same as schemes.css */
+
+body {
+    font-family: "Segoe UI", Arial, sans-serif;
+    background-color: #f9fafc;
+    margin: 0;
+    padding: 0;
+    color: #2d2d2d;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+    text-align: center;
+}
+
+.tag {
+    display: inline-block;
+    padding: 6px 14px;
+    background: #eaf2ff;
+    color: #0056b3;
+    font-weight: bold;
+    border-radius: 20px;
+    margin-bottom: 16px;
+    font-size: 14px;
+}
+
+h1 {
+    font-size: 32px;
+    font-weight: 700;
+    margin: 10px 0;
+}
+
+.subtitle {
+    color: #666;
+    font-size: 16px;
+    margin-bottom: 30px;
+}
+
+#searchBox {
+    width: 50%;
+    padding: 10px;
+    margin: 20px auto;
+    display: block;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+}
+
+/* Card Container */
+.cards {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 24px;
+}
+
+/* Card Style */
+.card {
+    background: white;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    padding: 24px;
+    width: 320px;
+    text-align: left;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.card h3 {
+    margin-top: 0;
+    font-size: 18px;
+}
+
+.card .description {
+    font-size: 14px;
+    color: #555;
+    margin: 8px 0 16px;
+}
+
+.card h4 {
+    margin-bottom: 6px;
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.card ul {
+    padding-left: 18px;
+    margin: 0 0 14px;
+    font-size: 14px;
+    color: #444;
+}
+
+.eligibility {
+    font-size: 13px;
+    color: #333;
+    margin-bottom: 18px;
+}
+
+/* Buttons */
+.btn {
+    display: inline-block;
+    padding: 10px 16px;
+    background: #007BFF;
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+    border-radius: 6px;
+    transition: background 0.2s ease;
+    margin-right: 6px;
+}
+
+.btn:hover {
+    background: #0056b3;
+}

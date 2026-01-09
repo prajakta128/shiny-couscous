@@ -1,0 +1,88 @@
+{% extends "base.html" %}
+{% block title %}Reminders{% endblock %}
+{% block styles %}
+<link rel="stylesheet" href="{{ url_for('static', filename='reminder.css') }}" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css" />
+{% endblock %}
+{% block content %}
+<div class="badge-custom">Health Management</div>
+<div class="main-title">Medicine & Appointment Reminders</div>
+
+<div class="subtitle">
+    Never miss your medications or doctor appointments with our smart reminder system.
+</div>
+
+<!-- Enable Notifications -->
+<div class="text-center mt-3">
+    <button id="enableNotifBtn" class="btn btn-primary">
+        🔔 Enable Notifications
+    </button>
+</div>
+
+<!-- Reminder Form -->
+<div class="card reminder-card">
+    <div class="reminder-form">
+        <h4>
+            <span class="calendar-icon">&#128197;</span>
+            Set New Reminder
+        </h4>
+        <form id="reminderForm">
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label>Reminder Type</label>
+                    <select class="form-control" id="type" required>
+                        <option>Medicine</option>
+                        <option>Appointment</option>
+                    </select>
+                </div>
+                <div class="form-group col-md-6">
+                    <label>Title</label>
+                    <input type="text" class="form-control" id="title" required
+                        placeholder="e.g., Blood pressure medication">
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-4">
+                    <label>Date</label>
+                    <input type="date" class="form-control" id="date" required>
+                </div>
+                <div class="form-group col-md-4">
+                    <label>Time</label>
+                    <input type="time" class="form-control" id="time" required>
+                </div>
+                <div class="form-group col-md-4">
+                    <label>Repeat</label>
+                    <select class="form-control" id="repeat">
+                        <option value="none">None</option>
+                        <option value="daily">Daily</option>
+                        <option value="weekly">Weekly</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label>Advance Alert (minutes)</label>
+                    <input type="number" class="form-control" id="advance" value="0" min="0" step="5">
+                </div>
+                <div class="form-group col-md-6">
+                    <label>Additional Notes</label>
+                    <textarea class="form-control" id="notes" rows="1"
+                        placeholder="Any special instructions or notes..."></textarea>
+                </div>
+            </div>
+            <button type="submit" class="btn btn-success set-btn btn-block">
+                Set Reminder
+            </button>
+        </form>
+        <div id="statusMsg" class="mt-3"></div>
+    </div>
+</div>
+
+<!-- Upcoming & Completed Reminders -->
+<div class="container mt-5">
+    <h4 class="text-center">My Reminders</h4>
+    <ul id="reminderList" class="list-group mt-3"></ul>
+</div>
+
+<script src="{{ url_for('static', filename='script/reminder.js') }}"></script>
+{% endblock %}

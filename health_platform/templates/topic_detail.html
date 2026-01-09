@@ -1,0 +1,140 @@
+{% extends "base.html" %}
+{% block title %}{{ topic.title }}{% endblock %}
+{% block styles %}
+<style>
+  .topic-detail-header {
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    color: white;
+    padding: 60px 20px;
+    margin-bottom: 40px;
+    border-radius: 12px;
+  }
+  .topic-detail-header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+    font-weight: 700;
+  }
+  .topic-badge {
+    background: rgba(255,255,255,0.3);
+    padding: 8px 16px;
+    border-radius: 20px;
+    display: inline-block;
+    margin-bottom: 10px;
+    font-size: 0.9rem;
+    font-weight: 600;
+  }
+  .topic-detail-content {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    gap: 30px;
+  }
+  .content-section {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: var(--shadow-md);
+    margin-bottom: 20px;
+  }
+  .dark-mode .content-section {
+    background: #2a2a2a;
+  }
+  .content-section h3 {
+    color: var(--primary-color);
+    font-size: 1.4rem;
+    margin-bottom: 15px;
+    border-bottom: 3px solid var(--primary-color);
+    padding-bottom: 10px;
+  }
+  .content-section p {
+    line-height: 1.8;
+    color: var(--text-light);
+    margin-bottom: 15px;
+  }
+  .back-link {
+    display: inline-block;
+    background: var(--primary-color);
+    color: white;
+    padding: 12px 25px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: var(--transition);
+  }
+  .back-link:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-lg);
+  }
+  .sidebar {
+    position: sticky;
+    top: 100px;
+    height: fit-content;
+  }
+  .sidebar-card {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: var(--shadow-md);
+  }
+  .dark-mode .sidebar-card {
+    background: #2a2a2a;
+  }
+  .sidebar-card h4 {
+    color: var(--primary-color);
+    margin-bottom: 15px;
+    font-size: 1.1rem;
+  }
+  .sidebar-item {
+    padding: 10px 0;
+    border-bottom: 1px solid var(--border-color);
+  }
+  .sidebar-item:last-child {
+    border-bottom: none;
+  }
+  @media (max-width: 768px) {
+    .topic-detail-content {
+      grid-template-columns: 1fr;
+    }
+    .sidebar {
+      position: static;
+    }
+  }
+</style>
+{% endblock %}
+{% block content %}
+<div class="topic-detail-header">
+  <div class="container">
+    <div class="topic-badge">{{ topic.icon }} {{ topic.category }}</div>
+    <h1>{{ topic.title }}</h1>
+  </div>
+</div>
+
+<div class="container topic-detail-content">
+  <div>
+    {% for section in topic.content %}
+    <div class="content-section">
+      <h3>{{ section.heading }}</h3>
+      <p>{{ section.text }}</p>
+    </div>
+    {% endfor %}
+    <a href="{{ url_for('topics') }}" class="back-link">← Back to Topics</a>
+  </div>
+  
+  <aside class="sidebar">
+    <div class="sidebar-card">
+      <h4>ℹ️ Topic Information</h4>
+      <div class="sidebar-item">
+        <strong>Category:</strong><br>
+        <small>{{ topic.category }}</small>
+      </div>
+      <div class="sidebar-item">
+        <strong>Icon:</strong><br>
+        <small style="font-size: 1.5rem;">{{ topic.icon }}</small>
+      </div>
+      <div class="sidebar-item">
+        <strong>Brief:</strong><br>
+        <small>{{ topic.brief }}</small>
+      </div>
+    </div>
+  </aside>
+</div>
+{% endblock %}

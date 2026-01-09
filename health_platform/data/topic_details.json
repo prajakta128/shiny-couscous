@@ -1,0 +1,242 @@
+{
+  "diabetes": {
+    "title": "Diabetes Management",
+    "category": "Chronic Conditions",
+    "icon": "💙",
+    "brief": "Complete guide to understanding and managing diabetes effectively.",
+    "content": [
+      {
+        "heading": "What is Diabetes?",
+        "text": "A chronic condition where the body cannot regulate blood sugar properly, leading to high glucose levels."
+      },
+      {
+        "heading": "Why Does Diabetes Happen?",
+        "text": "Type 1: Immune system destroys insulin-producing cells. Type 2: Body becomes resistant to insulin. Gestational: Temporary diabetes during pregnancy."
+      },
+      {
+        "heading": "Unique Fact",
+        "text": "Eye doctors can sometimes detect diabetes during eye exams before symptoms appear."
+      },
+      {
+        "heading": "Risk Factors",
+        "text": "Family history, obesity, sedentary lifestyle, high blood pressure, age over 40."
+      },
+      {
+        "heading": "Myth vs Fact",
+        "text": "Myth: Eating sugar causes diabetes. Fact: While sugar contributes to weight gain, genetics and insulin resistance are main causes."
+      },
+      {
+        "heading": "Do's & Don'ts",
+        "text": "✔ Do: Eat fiber-rich meals, stay active, check blood sugar. ✘ Don’t: Skip meals, rely on junk food, or ignore regular check-ups."
+      },
+      {
+        "heading": "When to See a Doctor",
+        "text": "If you experience excessive thirst, frequent urination, unexplained weight loss, or blurred vision."
+      },
+      {
+        "heading": "Daily Checklist",
+        "text": "✔ Monitor blood sugar ✔ Drink 2–3L water ✔ Exercise 30 min ✔ Eat balanced meals ✔ Get 7–8 hrs sleep"
+      }
+    ]
+  },
+  "heart-health": {
+    "title": "Heart Health",
+    "category": "Prevention",
+    "icon": "❤️",
+    "brief": "Smart lifestyle tips to keep your heart strong and disease-free.",
+    "content": [
+      {
+        "heading": "What is Heart Health?",
+        "text": "A healthy heart pumps blood efficiently to the body, maintaining energy and organ function."
+      },
+      {
+        "heading": "Why Heart Disease Happens?",
+        "text": "Plaque buildup in arteries, high blood pressure, stress, obesity, and smoking."
+      },
+      {
+        "heading": "Unique Fact",
+        "text": "Your heart beats over 100,000 times a day — about 3 billion times in a lifetime."
+      },
+      {
+        "heading": "Risk Factors",
+        "text": "Unhealthy diet, smoking, family history, high cholesterol, stress."
+      },
+      {
+        "heading": "Myth vs Fact",
+        "text": "Myth: Heart disease only affects old people. Fact: It can affect younger adults too, especially with poor lifestyle."
+      },
+      {
+        "heading": "Do's & Don'ts",
+        "text": "✔ Do: Eat omega-3 foods, exercise, manage stress. ✘ Don’t: Smoke, overeat processed food, or ignore symptoms."
+      },
+      {
+        "heading": "When to See a Doctor",
+        "text": "If you feel chest pain, shortness of breath, dizziness, or irregular heartbeat."
+      },
+      {
+        "heading": "Daily Checklist",
+        "text": "✔ 30 min walk ✔ Eat fruits & veggies ✔ Control salt ✔ Sleep 7 hrs ✔ Stay stress-free"
+      }
+    ]
+  },
+  "mental-wellness": {
+    "title": "Mental Wellness",
+    "category": "Mental Health",
+    "icon": "🧠",
+    "brief": "Tips for emotional balance, stress management, and healthy mindset.",
+    "content": [
+      {
+        "heading": "What is Mental Wellness?",
+        "text": "A state of emotional stability where you can handle stress, stay positive, and live productively."
+      },
+      {
+        "heading": "Why It Matters?",
+        "text": "Good mental health improves physical health, relationships, and productivity."
+      },
+      {
+        "heading": "Unique Fact",
+        "text": "Gratitude journaling for just 5 minutes daily can increase happiness by 10% long-term."
+      },
+      {
+        "heading": "Risk Factors",
+        "text": "Chronic stress, isolation, lack of sleep, financial worries, traumatic events."
+      },
+      {
+        "heading": "Myth vs Fact",
+        "text": "Myth: Strong people don’t need therapy. Fact: Therapy is a strength, not weakness."
+      },
+      {
+        "heading": "Do's & Don'ts",
+        "text": "✔ Do: Sleep well, practice mindfulness, talk about feelings. ✘ Don’t: Overuse screens, isolate yourself, ignore symptoms."
+      },
+      {
+        "heading": "When to See a Doctor",
+        "text": "If sadness lasts more than 2 weeks, panic attacks interfere with life, or suicidal thoughts occur."
+      },
+      {
+        "heading": "Daily Checklist",
+        "text": "✔ 10 min meditation ✔ Connect with a friend ✔ Write gratitude notes ✔ Take a nature walk"
+      }
+    ]
+  },
+  "nutrition-diet": {
+    "title": "Nutrition & Diet",
+    "category": "Lifestyle",
+    "icon": "🌱",
+    "brief": "Balanced diet tips for a healthy body, strong immunity, and better energy.",
+    "content": [
+      {
+        "heading": "What is Good Nutrition?",
+        "text": "Eating a mix of carbs, proteins, fats, vitamins, and minerals in the right proportions."
+      },
+      {
+        "heading": "Why It Matters?",
+        "text": "Good nutrition prevents chronic diseases, boosts immunity, and supports brain function."
+      },
+      {
+        "heading": "Unique Fact",
+        "text": "Your gut produces 90% of the body’s serotonin, the ‘happiness hormone’."
+      },
+      {
+        "heading": "Risk Factors",
+        "text": "Fast food dependency, nutrient deficiencies, irregular meals, excess sugar."
+      },
+      {
+        "heading": "Myth vs Fact",
+        "text": "Myth: Fats are bad. Fact: Healthy fats (avocado, nuts, olive oil) are essential for brain and hormone health."
+      },
+      {
+        "heading": "Do's & Don'ts",
+        "text": "✔ Do: Eat seasonal fruits, whole grains, drink water. ✘ Don’t: Skip breakfast, rely on energy drinks, overeat sugar."
+      },
+      {
+        "heading": "When to See a Doctor",
+        "text": "If you notice extreme fatigue, hair loss, frequent illness, or unexplained weight changes."
+      },
+      {
+        "heading": "Daily Checklist",
+        "text": "✔ 2 fruits ✔ 3 veggies ✔ 8 glasses water ✔ Limit sugar ✔ Eat home-cooked meals"
+      }
+    ]
+  },
+  "preventive-care": {
+    "title": "Preventive Care",
+    "category": "Prevention",
+    "icon": "🛡️",
+    "brief": "Stay ahead of illnesses with regular check-ups, vaccines, and healthy habits.",
+    "content": [
+      {
+        "heading": "What is Preventive Care?",
+        "text": "Healthcare that focuses on avoiding illness before it starts through screenings and vaccinations."
+      },
+      {
+        "heading": "Why It Matters?",
+        "text": "Detecting conditions early improves survival and reduces treatment costs."
+      },
+      {
+        "heading": "Unique Fact",
+        "text": "Just 5 habits (no smoking, healthy weight, daily exercise, good diet, limited alcohol) prevent 80% of chronic diseases."
+      },
+      {
+        "heading": "Risk Factors",
+        "text": "Skipping annual check-ups, ignoring family history, neglecting vaccinations."
+      },
+      {
+        "heading": "Myth vs Fact",
+        "text": "Myth: If I feel healthy, I don’t need check-ups. Fact: Many conditions show no early symptoms."
+      },
+      {
+        "heading": "Do's & Don'ts",
+        "text": "✔ Do: Schedule regular health screenings. ✘ Don’t: Delay vaccines or ignore family history."
+      },
+      {
+        "heading": "When to See a Doctor",
+        "text": "Annually for routine exams, or sooner if you notice sudden changes in health."
+      },
+      {
+        "heading": "Daily Checklist",
+        "text": "✔ Track BP ✔ Maintain weight ✔ Sleep 7–8 hrs ✔ Stay active ✔ Eat balanced meals"
+      }
+    ]
+  },
+  "exercise-fitness": {
+    "title": "Exercise & Fitness",
+    "category": "Fitness",
+    "icon": "⚡",
+    "brief": "Practical fitness routines to stay active, energetic, and strong.",
+    "content": [
+      {
+        "heading": "Why Exercise Matters?",
+        "text": "Exercise reduces risk of over 35 diseases, boosts brain power, and improves mood."
+      },
+      {
+        "heading": "How Much is Enough?",
+        "text": "150 minutes of aerobic activity + 2 days of strength training weekly."
+      },
+      {
+        "heading": "Unique Fact",
+        "text": "Just 10 minutes of brisk walking daily can add up to 7 years to life expectancy."
+      },
+      {
+        "heading": "Risk Factors",
+        "text": "Sedentary lifestyle, obesity, poor posture, weak muscles."
+      },
+      {
+        "heading": "Myth vs Fact",
+        "text": "Myth: Only intense workouts help. Fact: Even light activities (walking, yoga) give major health benefits."
+      },
+      {
+        "heading": "Do's & Don'ts",
+        "text": "✔ Do: Warm up before workouts, stay hydrated. ✘ Don’t: Overtrain, skip rest days, or exercise on empty stomach."
+      },
+      {
+        "heading": "When to See a Doctor",
+        "text": "If you feel chest pain, joint pain, or dizziness during exercise."
+      },
+      {
+        "heading": "Daily Checklist",
+        "text": "✔ 30 min walk ✔ 10 min stretch ✔ 2L water ✔ 7–8 hrs sleep ✔ Take stairs instead of elevator"
+      }
+    ]
+  }
+}

@@ -1,0 +1,157 @@
+{% extends "base.html" %}
+
+{% block title %}Wellness & Lifestyle - HealthHub{% endblock %}
+
+{% block content %}
+
+<!-- Header Section -->
+<section style="padding: 40px 20px; background: linear-gradient(135deg, rgba(0, 184, 138, 0.1) 0%, rgba(9, 132, 227, 0.1) 100%);">
+    <div class="container">
+        <h1 style="font-family: 'Poppins', sans-serif; font-size: 36px; font-weight: 700; color: var(--text-dark); margin-bottom: 10px;">Wellness & Lifestyle</h1>
+        <p style="font-size: 16px; color: var(--text-light);">Discover mindfulness practices, yoga, nutrition tips, meditation techniques, and holistic wellness resources for a balanced, healthy lifestyle.</p>
+    </div>
+</section>
+
+<!-- Wellness Categories -->
+<section style="padding: 60px 20px;">
+    <div class="container">
+        <h2 class="section-title">Wellness Categories</h2>
+        
+        <div class="cards-grid">
+            {% set wellness_categories = [
+                {'id':'meditation', 'icon':'🧘', 'title':'Meditation', 'description':'Discover mindfulness and meditation techniques to reduce stress, improve focus, and enhance mental clarity.', 'color': '#00b88a'},
+                {'id':'yoga', 'icon':'🤸', 'title':'Yoga', 'description':'Learn essential yoga poses and flows for flexibility, strength, stress relief, and overall wellness.', 'color': '#0984e3'},
+                {'id':'breathing', 'icon':'💨', 'title':'Breathing Exercises', 'description':'Master breathing techniques to manage anxiety, improve oxygen flow, and promote relaxation.', 'color': '#6c5ce7'},
+                {'id':'nutrition', 'icon':'🥗', 'title':'Nutrition', 'description':'Explore healthy eating habits, balanced diet plans, and nutrition tips for optimal health.', 'color': '#00b88a'},
+                {'id':'sleep', 'icon':'😴', 'title':'Sleep & Rest', 'description':'Learn strategies to improve sleep quality and develop healthy sleep routines for better recovery.', 'color': '#0984e3'},
+                {'id':'exercise', 'icon':'🏃', 'title':'Physical Activity', 'description':'Discover various exercises and fitness routines to boost energy, mood, and cardiovascular health.', 'color': '#6c5ce7'},
+                {'id':'mental_health', 'icon':'🧠', 'title':'Mental Health', 'description':'Access resources for managing stress, anxiety, and building emotional resilience.', 'color': '#00b88a'},
+                {'id':'self_care', 'icon':'💆', 'title':'Self-Care', 'description':'Explore daily self-care practices for emotional well-being and personal wellness.', 'color': '#0984e3'},
+                {'id':'wellness', 'icon':'✨', 'title':'Wellness Tips', 'description':'General wellness practices and lifestyle modifications for holistic health.', 'color': '#6c5ce7'},
+                {'id':'hydration', 'icon':'💧', 'title':'Hydration', 'description':'Learn the importance of staying hydrated and develop healthy water consumption habits.', 'color': '#00b88a'}
+            ] %}
+
+            {% for category in wellness_categories %}
+            <div class="wellness-card" onclick="loadArticle('{{ category.id }}')" style="cursor: pointer; border-left: 5px solid {{ category.color }};">
+                <div style="font-size: 48px; margin-bottom: 15px;">{{ category.icon }}</div>
+                <h3>{{ category.title }}</h3>
+                <p>{{ category.description }}</p>
+                <a href="#" style="color: {{ category.color }}; text-decoration: none; font-weight: 600; display: inline-flex; align-items: center; gap: 8px; margin-top: 10px;">
+                    Learn More <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<!-- Featured Articles -->
+<section style="padding: 60px 20px; background: var(--neutral-bg);">
+    <div class="container">
+        <h2 class="section-title">Featured Articles</h2>
+        
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px;">
+            {% set articles = [
+                {'id':'meditation', 'title':'Mindfulness Meditation for Beginners', 'preview':'Learn simple meditation techniques to reduce stress and improve mental clarity.', 'time':'5 min', 'icon':'🧘'},
+                {'id':'yoga', 'title':'Yoga Poses for Stress Relief', 'preview':'Essential yoga poses that help calm the mind and relax the body.', 'time':'8 min', 'icon':'🤸'},
+                {'id':'breathing', 'title':'Breathing Exercises for Anxiety', 'preview':'Effective breathing techniques to manage anxiety and panic attacks.', 'time':'4 min', 'icon':'💨'},
+                {'id':'nutrition', 'title':'Healthy Eating Habits', 'preview':'A balanced diet with fruits, vegetables, whole grains supports overall health.', 'time':'6 min', 'icon':'🥗'},
+                {'id':'sleep', 'title':'Improving Sleep Quality', 'preview':'Maintain a consistent sleep schedule and develop a relaxing bedtime routine.', 'time':'7 min', 'icon':'😴'},
+                {'id':'exercise', 'title':'Daily Physical Activity', 'preview':'30 minutes of moderate exercise to boost heart health, mood, and energy.', 'time':'6 min', 'icon':'🏃'}
+            ] %}
+
+            {% for article in articles %}
+            <div class="card" onclick="loadArticle('{{ article.id }}')" style="cursor: pointer;">
+                <div style="font-size: 40px; margin-bottom: 15px;">{{ article.icon }}</div>
+                <h3>{{ article.title }}</h3>
+                <p>{{ article.preview }}</p>
+                <div style="display: flex; align-items: center; justify-content: space-between; margin-top: 15px;">
+                    <span style="font-size: 12px; color: var(--text-light);"><i class="fas fa-clock"></i> {{ article.time }} read</span>
+                    <a href="#" style="color: var(--primary-color); text-decoration: none; font-weight: 600;">
+                        Read <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<!-- Article Modal -->
+<div id="articleModal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.5); z-index: 2000; overflow-y: auto;">
+    <div style="background: white; max-width: 800px; margin: 40px auto; border-radius: 12px; padding: 40px; position: relative; box-shadow: var(--shadow-lg);">
+        <button onclick="closeModal()" style="position: absolute; top: 15px; right: 15px; background: none; border: none; font-size: 28px; cursor: pointer; color: var(--text-light);">&times;</button>
+        
+        <h2 id="articleTitle" style="font-family: 'Poppins', sans-serif; font-size: 28px; font-weight: 700; margin-bottom: 20px; color: var(--text-dark);"></h2>
+        <p id="articleContent" style="font-size: 16px; line-height: 1.8; color: var(--text-light);"></p>
+    </div>
+</div>
+
+<script>
+    const articles = {
+        "meditation": {
+            "title": "Mindfulness Meditation for Beginners",
+            "content": "This article explains simple meditation techniques to reduce stress and improve mental clarity. Start with deep breathing, focus on your breath, and practice daily for 5–10 minutes. Try incorporating guided meditations using apps or online videos. Create a quiet and comfortable space to minimize distractions and enhance focus. Meditation is a powerful tool for developing mindfulness and awareness of your thoughts and emotions."
+        },
+        "yoga": {
+            "title": "Yoga Poses for Stress Relief",
+            "content": "Yoga poses like Child's Pose, Forward Fold, and Legs-Up-The-Wall help release tension, calm the mind, and relax the body. These gentle poses can be practiced daily and are suitable for all fitness levels. Yoga not only improves flexibility but also helps regulate the nervous system, reducing stress and anxiety. Regular practice of these poses can lead to better sleep quality and improved overall well-being."
+        },
+        "breathing": {
+            "title": "Breathing Exercises for Anxiety",
+            "content": "Try 4-7-8 breathing or box breathing to manage anxiety and panic attacks effectively. These simple yet powerful techniques can be done anywhere and anytime. The 4-7-8 technique involves breathing in for 4 counts, holding for 7 counts, and exhaling for 8 counts. Box breathing involves equal counts for inhale, hold, exhale, and hold again. Practice these techniques regularly to calm your mind and body during stressful situations."
+        },
+        "nutrition": {
+            "title": "Healthy Eating Habits",
+            "content": "A balanced diet with fruits, vegetables, whole grains, and lean proteins supports overall health. Limit processed foods and sugary drinks to maintain optimal nutrition. Include a variety of colorful fruits and vegetables to ensure you get different vitamins and minerals. Whole grains provide fiber and sustained energy, while lean proteins support muscle health and recovery. Remember to stay hydrated and eat mindfully to enjoy your food better."
+        },
+        "sleep": {
+            "title": "Improving Sleep Quality",
+            "content": "Maintain a consistent sleep schedule, create a relaxing bedtime routine, and reduce screen time before bed to improve sleep quality. Aim for 7-9 hours of quality sleep each night. Keep your bedroom cool, dark, and quiet. Avoid caffeine and heavy meals close to bedtime. Instead, try relaxation techniques like deep breathing or meditation. Good sleep is essential for physical and mental health, immune function, and emotional well-being."
+        },
+        "exercise": {
+            "title": "Daily Physical Activity",
+            "content": "Incorporate at least 30 minutes of moderate exercise like walking, cycling, or swimming to boost heart health, mood, and energy. Regular physical activity reduces the risk of chronic diseases and improves mental health. Find activities you enjoy to make exercise a sustainable habit. Start slowly if you're new to exercising and gradually increase intensity. Remember to warm up before and cool down after exercise to prevent injury."
+        },
+        "mental_health": {
+            "title": "Managing Stress and Anxiety",
+            "content": "Identify stress triggers, practice mindfulness, and seek social support. Professional help can also be valuable when needed. Stress management techniques like journaling, talking to friends, or engaging in hobbies can be very effective. Don't hesitate to seek help from mental health professionals if you're struggling. Remember that seeking help is a sign of strength, not weakness. Your mental health is just as important as your physical health."
+        },
+        "self_care": {
+            "title": "Daily Self-Care Practices",
+            "content": "Set aside time for yourself, whether through journaling, reading, or hobbies, to maintain emotional and mental well-being. Self-care is not selfish; it's essential for your health and happiness. Develop a routine that includes activities you enjoy and that help you relax. This could include skincare, exercise, creative hobbies, or simply spending time in nature. Regular self-care helps reduce stress, improve mood, and boost overall quality of life."
+        },
+        "wellness": {
+            "title": "Building Mental Resilience",
+            "content": "Resilience is about bouncing back from challenges. Focus on gratitude, positive affirmations, and consistent self-care. Build a support network of family and friends you can rely on. Practice optimism and look for learning opportunities in difficult situations. Develop coping strategies that work for you. Remember that resilience is a skill that can be developed and strengthened over time through practice and perseverance."
+        },
+        "hydration": {
+            "title": "Importance of Staying Hydrated",
+            "content": "Drink enough water daily to support digestion, energy levels, and overall wellness. Track your water intake to ensure hydration. Most adults need about 8-10 glasses of water per day, but this varies based on activity level and climate. Proper hydration supports every bodily function from digestion to temperature regulation. Keep a water bottle with you throughout the day as a reminder to drink regularly."
+        }
+    };
+
+    function loadArticle(topicId) {
+        const article = articles[topicId];
+        if (article) {
+            document.getElementById('articleTitle').textContent = article.title;
+            document.getElementById('articleContent').textContent = article.content;
+            document.getElementById('articleModal').style.display = 'block';
+            document.body.style.overflow = 'hidden';
+        }
+    }
+
+    function closeModal() {
+        document.getElementById('articleModal').style.display = 'none';
+        document.body.style.overflow = 'auto';
+    }
+
+    // Close modal when clicking outside
+    document.getElementById('articleModal').addEventListener('click', function(e) {
+        if (e.target === this) {
+            closeModal();
+        }
+    });
+</script>
+
+{% endblock %} 

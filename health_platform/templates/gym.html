@@ -1,0 +1,296 @@
+{% extends "base.html" %}
+
+{% block title %}AI Gym Trainer - HealthHub{% endblock %}
+
+{% block styles %}
+<style>
+  .gym-header {
+    background: linear-gradient(135deg, #ff6b6b 0%, #ee5a6f 50%, #c44569 100%);
+    color: white;
+    padding: 80px 20px;
+    text-align: center;
+    margin-bottom: 60px;
+    border-radius: 12px;
+  }
+  
+  .gym-header h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+    text-shadow: 0 2px 10px rgba(0,0,0,0.2);
+  }
+  
+  .gym-header p {
+    font-size: 1.2rem;
+    opacity: 0.95;
+    margin-bottom: 30px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+    margin-bottom: 60px;
+  }
+  
+  .feature-card {
+    background: white;
+    padding: 35px 25px;
+    border-radius: 12px;
+    box-shadow: var(--shadow-md);
+    transition: var(--transition);
+    text-align: center;
+    border-top: 4px solid #ff6b6b;
+  }
+  
+  .dark-mode .feature-card {
+    background: #2a2a2a;
+  }
+  
+  .feature-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-lg);
+    border-top-color: #ee5a6f;
+  }
+  
+  .feature-icon {
+    font-size: 3rem;
+    margin-bottom: 15px;
+  }
+  
+  .feature-card h3 {
+    color: var(--text-dark);
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-bottom: 12px;
+  }
+  
+  .feature-card p {
+    color: var(--text-light);
+    line-height: 1.6;
+    font-size: 0.95rem;
+  }
+  
+  .cta-section {
+    background: linear-gradient(135deg, #ff6b6b 0%, #ee5a6f 50%, #c44569 100%);
+    color: white;
+    padding: 60px 40px;
+    border-radius: 12px;
+    text-align: center;
+    margin-bottom: 60px;
+  }
+  
+  .cta-section h2 {
+    font-size: 2rem;
+    margin-bottom: 15px;
+    font-weight: 700;
+  }
+  
+  .cta-section p {
+    font-size: 1.1rem;
+    margin-bottom: 30px;
+    opacity: 0.95;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .start-btn {
+    background: white;
+    color: #ff6b6b;
+    padding: 16px 45px;
+    border: none;
+    border-radius: 30px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: var(--transition);
+    text-decoration: none;
+    display: inline-block;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+  }
+  
+  .start-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.3);
+    background: #f8f9fa;
+  }
+  
+  .start-btn:active {
+    transform: translateY(-1px);
+  }
+  
+  .requirements {
+    background: rgba(255, 107, 107, 0.1);
+    border-left: 4px solid #ff6b6b;
+    padding: 25px;
+    border-radius: 8px;
+    margin-top: 30px;
+  }
+  
+  .dark-mode .requirements {
+    background: rgba(255, 107, 107, 0.15);
+  }
+  
+  .requirements h4 {
+    color: #ff6b6b;
+    margin-bottom: 15px;
+    font-weight: 600;
+  }
+  
+  .requirements ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .requirements li {
+    padding: 8px 0;
+    color: var(--text-light);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .requirements li::before {
+    content: '✓';
+    color: #ff6b6b;
+    font-weight: 700;
+    font-size: 1.2rem;
+  }
+  
+  @media (max-width: 768px) {
+    .gym-header h1 {
+      font-size: 2rem;
+    }
+    
+    .gym-header p {
+      font-size: 1rem;
+    }
+    
+    .cta-section {
+      padding: 40px 20px;
+    }
+    
+    .cta-section h2 {
+      font-size: 1.5rem;
+    }
+  }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="gym-header">
+  <div class="container">
+    <h1>🤖 AI Gym Trainer</h1>
+    <p>Your personal AI fitness coach - Count reps, track exercises, and improve your workout with real-time feedback using your webcam</p>
+  </div>
+</div>
+
+<div class="container">
+  <!-- Features Grid -->
+  <div class="features-grid">
+    <div class="feature-card">
+      <div class="feature-icon">📹</div>
+      <h3>Real-time Detection</h3>
+      <p>AI-powered computer vision detects your body movements and counts reps automatically with high accuracy.</p>
+    </div>
+    
+    <div class="feature-card">
+      <div class="feature-icon">💪</div>
+      <h3>Exercise Tracking</h3>
+      <p>Track multiple exercises including squats, push-ups, pull-ups, and more with detailed statistics.</p>
+    </div>
+    
+    <div class="feature-card">
+      <div class="feature-icon">📊</div>
+      <h3>Performance Stats</h3>
+      <p>Monitor your workout progress with visual feedback and performance metrics to stay motivated.</p>
+    </div>
+    
+    <div class="feature-card">
+      <div class="feature-icon">⚡</div>
+      <h3>Instant Feedback</h3>
+      <p>Get real-time form correction and encouragement to maximize your training effectiveness.</p>
+    </div>
+    
+    <div class="feature-card">
+      <div class="feature-icon">📱</div>
+      <h3>Webcam Access</h3>
+      <p>Works with your computer's built-in webcam or external camera - no special equipment needed.</p>
+    </div>
+    
+    <div class="feature-card">
+      <div class="feature-icon">🎯</div>
+      <h3>Goal Setting</h3>
+      <p>Set daily goals and track your achievements to build a consistent fitness routine.</p>
+    </div>
+  </div>
+  
+  <!-- Requirements -->
+  <div class="requirements">
+    <h4>✨ Requirements to Get Started</h4>
+    <ul>
+      <li>Webcam access (camera permission required)</li>
+      <li>Well-lit workout space</li>
+      <li>Clear view of your full body</li>
+      <li>Modern web browser (Chrome, Firefox, Edge, Safari)</li>
+    </ul>
+  </div>
+</div>
+
+<!-- CTA Section -->
+<div class="cta-section">
+  <div class="container">
+    <h2>Ready to Transform Your Fitness?</h2>
+    <p>Start your AI Gym Trainer now and experience the future of personalized fitness coaching</p>
+    <form action="/start-gym" method="post" style="display: inline;">
+      <button type="submit" class="start-btn">🚀 Launch AI Gym Trainer</button>
+    </form>
+  </div>
+</div>
+
+<!-- Info Section -->
+<div class="container" style="margin-bottom: 40px;">
+  <div style="background: white; padding: 40px; border-radius: 12px; box-shadow: var(--shadow-md);">
+    <div class="dark-mode" style="background: #2a2a2a; color: var(--text-dark);">
+      <h3 style="color: #ff6b6b; margin-bottom: 20px; font-size: 1.5rem;">How It Works</h3>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px;">
+        <div>
+          <h4 style="color: var(--text-dark); margin-bottom: 10px;">Step 1: Launch</h4>
+          <p style="color: var(--text-light); font-size: 0.95rem;">Click the "Launch AI Gym Trainer" button to start the application in a new window.</p>
+        </div>
+        <div>
+          <h4 style="color: var(--text-dark); margin-bottom: 10px;">Step 2: Allow Access</h4>
+          <p style="color: var(--text-light); font-size: 0.95rem;">Grant camera permissions when prompted to enable real-time exercise detection.</p>
+        </div>
+        <div>
+          <h4 style="color: var(--text-dark); margin-bottom: 10px;">Step 3: Start Training</h4>
+          <p style="color: var(--text-light); font-size: 0.95rem;">Select your exercise and begin your workout. The AI will count reps automatically.</p>
+        </div>
+        <div>
+          <h4 style="color: var(--text-dark); margin-bottom: 10px;">Step 4: Track Progress</h4>
+          <p style="color: var(--text-light); font-size: 0.95rem;">View your stats and celebrate your achievements to stay motivated.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Safety Tips -->
+<div class="container" style="margin-bottom: 60px;">
+  <div style="background: linear-gradient(135deg, rgba(255, 107, 107, 0.05) 0%, rgba(238, 90, 111, 0.05) 100%); padding: 30px; border-radius: 12px; border-left: 4px solid #ff6b6b;">
+    <h4 style="color: #ff6b6b; margin-bottom: 15px; font-weight: 600;">🏋️ Safety Tips for Best Results</h4>
+    <ul style="columns: 2; gap: 20px; color: var(--text-light);">
+      <li>Always warm up before intense exercises</li>
+      <li>Stay hydrated during your workout</li>
+      <li>Use proper form to avoid injuries</li>
+      <li>Start with lighter weights or fewer reps</li>
+      <li>Rest between sets (30-90 seconds)</li>
+      <li>Consult a doctor before starting new routines</li>
+    </ul>
+  </div>
+</div>
+{% endblock %}

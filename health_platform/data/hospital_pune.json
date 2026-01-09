@@ -1,0 +1,242 @@
+[
+  {
+    "state": "Maharashtra",
+    "hospital_name": "Ruby Hall Clinic (Main)",
+    "address": "40, Sassoon Rd, Sangamvadi, Pune, Maharashtra 411001",
+    "treatment": "Super-speciality — cardiology, neurosurgery, oncology, organ transplant, critical care, emergency services",
+    "rating": 4.2,
+    "contact": "020-6645-5100"
+  },
+  {
+    "state": "Maharashtra",
+    "hospital_name": "Jehangir Hospital",
+    "address": "32, Sassoon Road, Bund Garden, Pune, Maharashtra 411001",
+    "treatment": "Multi-speciality — critical care, diagnostics, trauma, surgery, general medicine",
+    "rating": 4.1,
+    "contact": "020-6681-1000"
+  },
+  {
+    "state": "Maharashtra",
+    "hospital_name": "Deenanath Mangeshkar Hospital & Research Centre",
+    "address": "Erandwane, Near Mhatre Bridge, Pune 411004",
+    "treatment": "Super-speciality — oncology, cardiology, orthopedics, ICU, research-based specialties",
+    "rating": 4.3,
+    "contact": "020-4015-1000"
+  },
+  {
+    "state": "Maharashtra",
+    "hospital_name": "Sassoon General Hospital",
+    "address": "Station Rd, Agarkar Nagar, Pune, Maharashtra 411001",
+    "treatment": "Government hospital — emergency care, burns, trauma, general medicine, surgery",
+    "rating": 3.9,
+    "contact": "020-2612-7301"
+  },
+  {
+    "state": "Maharashtra",
+    "hospital_name": "Sahyadri Super Speciality Hospital - Deccan",
+    "address": "Plot No. 30-C, Erandwane Housing Society, Karve Road, Deccan Gymkhana, Pune 411004",
+    "treatment": "Super-speciality — oncology, neurosurgery, transplant, critical care",
+    "rating": 4.2,
+    "contact": "020-6721-1000"
+  },
+  {
+    "state": "Maharashtra",
+    "hospital_name": "Poona Hospital & Research Centre",
+    "address": "27, Sadashiv Peth, Near Alka Talkies, Pune 411030",
+    "treatment": "Multi-speciality — critical care, general medicine, dialysis, surgery",
+    "rating": 4.0,
+    "contact": "020-6609-9999"
+  },
+  {
+    "state": "Maharashtra",
+    "hospital_name": "Inlaks & Budhrani (Sadhu Vaswani Mission Medical Complex)",
+    "address": "7-9, Koregaon Park, Pune 411001",
+    "treatment": "Multi-speciality — oncology, cardiology, dialysis, general medicine",
+    "rating": 4.1,
+    "contact": "020-2605-6000"
+  },
+  {
+    "state": "Maharashtra",
+    "hospital_name": "Bharati Vidyapeeth Medical College & Hospital (Bharati Hospital)",
+    "address": "Pune-Satara Road, Dhankawadi, Pune 411043",
+    "treatment": "Teaching & multi-speciality hospital — trauma, orthopedics, pediatrics, cardiology",
+    "rating": 4.0,
+    "contact": "020-2437-2028"
+  },
+  {
+    "state": "Maharashtra",
+    "hospital_name": "Manipal Hospital, Kharadi",
+    "address": "Survey No 52/3A/1/4, Kharadi, Pune 411014",
+    "treatment": "Super-speciality — transplant, oncology, IVF, cardiology, neurology",
+    "rating": 4.3,
+    "contact": "020-7122-1000"
+  },
+  {
+    "state": "Maharashtra",
+    "hospital_name": "Sahyadri Super Speciality Hospital - Hadapsar",
+    "address": "Sasane Nagar, Hadapsar, Pune 411028",
+    "treatment": "Super-speciality — surgical care, oncology, IV therapy, emergency services",
+    "rating": 4.1,
+    "contact": "020-6721-1100"
+  },
+  {
+    "state": "Maharashtra",
+    "hospital_name": "Lifeline Hospital, Aundh",
+    "address": "DP Rd, Aundh, Pune 411007",
+    "treatment": "Multi-speciality — maternity, child care, surgery, trauma",
+    "rating": 4.0,
+    "contact": "020-2721-0100"
+  },
+  {
+    "state": "Maharashtra",
+    "hospital_name": "Rising Medicare Hospital",
+    "address": "Ashoka Nagar, Kharadi, Pune 411014",
+    "treatment": "Multi-speciality — internal medicine, ICU, cardiology, orthopedics",
+    "rating": 4.0,
+    "contact": "020-2704-5555"
+  },
+  {
+    "state": "Maharashtra",
+    "hospital_name": "Lokmanya Hospital - Nigdi",
+    "address": "Chinchwad, Nigdi-Pradhikaran, Pimpri-Chinchwad 411044",
+    "treatment": "Orthopedic super-speciality — joint replacement, spine surgery, sports medicine",
+    "rating": 4.2,
+    "contact": "020-2765-2222"
+  },
+  {
+    "state": "Maharashtra",
+    "hospital_name": "Aditya Birla Memorial Hospital",
+    "address": "Aditya Birla Hospital Marg, Thergaon, Pimpri-Chinchwad 411033",
+    "treatment": "Super-speciality — transplant, fertility, oncology, cardiac sciences",
+    "rating": 4.3,
+    "contact": "020-3071-7500"
+  },
+  {
+    "state": "Maharashtra",
+    "hospital_name": "Noble Hospital",
+    "address": "153, Magarpatta City Rd, Hadapsar, Pune 411028",
+    "treatment": "Multi-speciality — critical care, women care, cardiac sciences, nephrology",
+    "rating": 4.1,
+    "contact": "020-6628-8000"
+  },
+  {
+    "state": "Maharashtra",
+    "hospital_name": "Joshi Hospital",
+    "address": "944, Bhandarkar Rd, Shivajinagar, Pune 411004",
+    "treatment": "Multi-speciality — maternity, surgery, diagnostics",
+    "rating": 4.0,
+    "contact": "020-2565-0000"
+  },
+  {
+    "state": "Maharashtra",
+    "hospital_name": "Ratna Memorial Hospital",
+    "address": "Senapati Bapat Rd, Shivajinagar, Pune 411016",
+    "treatment": "Multi-speciality — diabetes care, cardiology, neurology, surgery",
+    "rating": 4.0,
+    "contact": "020-6609-2000"
+  },
+  {
+    "state": "Maharashtra",
+    "hospital_name": "Hardikar Hospital",
+    "address": "1160/61, University Rd, Shivajinagar, Pune 411016",
+    "treatment": "Orthopedic speciality hospital",
+    "rating": 4.2,
+    "contact": "020-2553-1700"
+  },
+  {
+    "state": "Maharashtra",
+    "hospital_name": "Sahyadri Hospital - Kothrud",
+    "address": "Nr Vanaz, Paud Rd, Kothrud, Pune 411038",
+    "treatment": "Super-speciality — multi-department care, neurology, cardiology, oncology",
+    "rating": 4.1,
+    "contact": "020-6721-1200"
+  },
+  {
+    "state": "Maharashtra",
+    "hospital_name": "Sahyadri Hospital - Nagar Road",
+    "address": "Nagar Rd, Yerwada, Pune 411006",
+    "treatment": "Super-speciality — transplant, ICU, surgery",
+    "rating": 4.1,
+    "contact": "020-6721-1300"
+  },
+  {
+    "state": "Maharashtra",
+    "hospital_name": "Jupiter Hospital - Pune",
+    "address": "Baner, Pune 411045",
+    "treatment": "Super-speciality — transplant, neurology, oncology, advanced ICU",
+    "rating": 4.3,
+    "contact": "020-6641-1000"
+  },
+  {
+    "state": "Maharashtra",
+    "hospital_name": "Cloudnine Hospital - Kalyani Nagar",
+    "address": "88/1A, Nagar Rd, Kalyani Nagar, Pune 411006",
+    "treatment": "Speciality — maternity, pediatrics, IVF, neonatal ICU",
+    "rating": 4.4,
+    "contact": "020-6728-9000"
+  },
+  {
+    "state": "Maharashtra",
+    "hospital_name": "Motherhood Hospital - Kharadi",
+    "address": "S No 5/6/7, Kharadi Bypass, Pune 411014",
+    "treatment": "Speciality — women’s health, IVF, NICU, gynecology",
+    "rating": 4.4,
+    "contact": "020-6721-1400"
+  },
+  {
+    "state": "Maharashtra",
+    "hospital_name": "Command Hospital (SC)",
+    "address": "Command Hospital, Pune Cantonment 411040",
+    "treatment": "Defence hospital — multi-speciality, emergency, trauma",
+    "rating": 4.2,
+    "contact": "020-2633-0000"
+  },
+  {
+    "state": "Maharashtra",
+    "hospital_name": "Sahyadri Hospital - Kasba Peth",
+    "address": "Kasba Peth, Pune 411011",
+    "treatment": "Super-speciality — cancer care, kidney care, surgery, trauma",
+    "rating": 4.1,
+    "contact": "020-6721-1500"
+  },
+  {
+    "state": "Maharashtra",
+    "hospital_name": "Smt. Kashibai Navale Medical College & General Hospital",
+    "address": "S. No. 49/1, Narhe, Pune 411041",
+    "treatment": "Teaching hospital — multi-speciality, general medicine, trauma",
+    "rating": 4.0,
+    "contact": "020-2410-2000"
+  },
+  {
+    "state": "Maharashtra",
+    "hospital_name": "YCM Hospital (Dr. Yashwantrao Chavan Memorial Hospital)",
+    "address": "Pimpri, Chinchwad, Pune 411018",
+    "treatment": "Municipal hospital — multi-speciality, general medicine, trauma",
+    "rating": 3.8,
+    "contact": "020-2742-1700"
+  },
+  {
+    "state": "Maharashtra",
+    "hospital_name": "MediPoint Hospital (Aundh)",
+    "address": "S No 149/150, DP Rd, Aundh, Pune 411007",
+    "treatment": "Multi-speciality — cardiology, pediatrics, surgery",
+    "rating": 4.0,
+    "contact": "020-2720-1000"
+  },
+  {
+    "state": "Maharashtra",
+    "hospital_name": "Care Institute of Medical Sciences (CIMS) - Pune",
+    "address": "Viman Nagar, Pune 411014",
+    "treatment": "Multi-speciality — cardiac sciences, gastroenterology, surgery",
+    "rating": 4.1,
+    "contact": "020-6640-9000"
+  },
+  {
+    "state": "Maharashtra",
+    "hospital_name": "Medipoint Hospital (Baner)",
+    "address": "Baner, Pune 411045",
+    "treatment": "Multi-speciality — maternity care, orthopedics, cardiology",
+    "rating": 4.0,
+    "contact": "020-2729-3000"
+  }
+]

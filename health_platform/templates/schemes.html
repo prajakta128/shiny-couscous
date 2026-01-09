@@ -1,0 +1,101 @@
+{% extends "base.html" %}
+
+{% block title %}Government Health Schemes - HealthHub{% endblock %}
+
+{% block content %}
+
+<!-- Header Section -->
+<section style="padding: 40px 20px; background: linear-gradient(135deg, rgba(0, 184, 138, 0.1) 0%, rgba(9, 132, 227, 0.1) 100%);">
+    <div class="container">
+        <h1 style="font-family: 'Poppins', sans-serif; font-size: 36px; font-weight: 700; color: var(--text-dark); margin-bottom: 10px;">Government Health Schemes</h1>
+        <p style="font-size: 16px; color: var(--text-light); margin-bottom: 30px;">Explore government health schemes, insurance programs, and benefits available to citizens. Find the right scheme for your needs.</p>
+        
+        <!-- Search & Filter -->
+        <div class="filter-search-container">
+            <input type="text" class="filter-input" id="schemeSearch" placeholder="Search schemes..." style="flex: 1; min-width: 250px;">
+            <select class="filter-select" id="benefitFilter" style="min-width: 150px;">
+                <option value="">All Benefits</option>
+                <option value="Hospitalization">Hospitalization</option>
+                <option value="Coverage">Coverage</option>
+                <option value="Maternity">Maternity</option>
+                <option value="Disability">Disability</option>
+            </select>
+        </div>
+    </div>
+</section>
+
+<!-- Schemes Grid -->
+<section style="padding: 60px 20px;">
+    <div class="container">
+        <div class="cards-grid" id="schemesGrid">
+            {% for scheme in schemes %}
+            <div class="scheme-card" data-name="{{ scheme.name.lower() }}">
+                <div style="height: 5px; background: linear-gradient(90deg, var(--primary-color), var(--secondary-color)); border-radius: 2px; margin-bottom: 20px;"></div>
+                
+                <h3 style="font-family: 'Poppins', sans-serif; font-size: 18px; font-weight: 600; margin-bottom: 15px; color: var(--text-dark);">{{ scheme.name }}</h3>
+                
+                <p style="font-size: 14px; color: var(--text-light); margin-bottom: 15px; line-height: 1.6;">{{ scheme.description }}</p>
+                
+                <div style="margin-bottom: 20px;">
+                    <h4 style="font-size: 13px; font-weight: 600; color: var(--text-dark); text-transform: uppercase; margin-bottom: 10px;">Key Benefits:</h4>
+                    <ul style="list-style: none; padding: 0; margin: 0;">
+                        {% for benefit in scheme.benefits[:3] %}
+                        <li style="font-size: 13px; color: var(--text-light); padding: 6px 0; display: flex; align-items: flex-start; gap: 8px;">
+                            <i class="fas fa-check-circle" style="color: var(--primary-color); margin-top: 2px; flex-shrink: 0;"></i>
+                            {{ benefit }}
+                        </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+                
+                <p style="font-size: 13px; color: var(--text-dark); background: var(--neutral-bg); padding: 12px; border-radius: 8px; margin-bottom: 15px;"><strong>Eligibility:</strong> {{ scheme.eligibility }}</p>
+                
+                <a href="{{ url_for('scheme_detail', scheme_id=scheme.id) }}" class="btn btn-primary" style="display: block; text-align: center; padding: 10px;">
+                    Learn More <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+            {% endfor %}
+        </div>
+        
+        <!-- No Results Message -->
+        <div id="noResults" style="display: none; text-align: center; padding: 60px 20px;">
+            <i class="fas fa-search" style="font-size: 48px; color: var(--text-light); margin-bottom: 20px; display: block;"></i>
+            <h3 style="color: var(--text-dark);">No schemes found</h3>
+            <p style="color: var(--text-light);">Try adjusting your search criteria.</p>
+        </div>
+    </div>
+</section>
+
+<script>
+    // Search and Filter Functionality
+    const searchInput = document.getElementById('schemeSearch');
+    const benefitFilter = document.getElementById('benefitFilter');
+    const schemesGrid = document.getElementById('schemesGrid');
+    const noResults = document.getElementById('noResults');
+    const cards = document.querySelectorAll('.scheme-card');
+
+    function filterSchemes() {
+        const searchTerm = searchInput.value.toLowerCase();
+        let visibleCount = 0;
+
+        cards.forEach(card => {
+            const name = card.getAttribute('data-name');
+            const matchesSearch = name.includes(searchTerm);
+            
+            if (matchesSearch) {
+                card.style.display = '';
+                visibleCount++;
+            } else {
+                card.style.display = 'none';
+            }
+        });
+
+        noResults.style.display = visibleCount === 0 ? 'block' : 'none';
+    }
+
+    searchInput.addEventListener('input', filterSchemes);
+    benefitFilter.addEventListener('change', filterSchemes);
+</script>
+
+{% endblock %} 
+

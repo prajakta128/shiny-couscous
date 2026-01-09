@@ -1,0 +1,93 @@
+{% extends "base.html" %}
+
+{% block title %}Health Topics - HealthHub{% endblock %}
+
+{% block content %}
+
+<!-- Header Section -->
+<section style="padding: 40px 20px; background: linear-gradient(135deg, rgba(0, 184, 138, 0.1) 0%, rgba(9, 132, 227, 0.1) 100%);">
+    <div class="container">
+        <h1 style="font-family: 'Poppins', sans-serif; font-size: 36px; font-weight: 700; color: var(--text-dark); margin-bottom: 10px;">Health Topics & Articles</h1>
+        <p style="font-size: 16px; color: var(--text-light); margin-bottom: 30px;">Explore comprehensive health information, prevention tips, and wellness guidance on various medical conditions.</p>
+        
+        <!-- Search & Filter -->
+        <div class="filter-search-container">
+            <input type="text" class="filter-input" id="topicSearch" placeholder="Search topics..." style="flex: 1; min-width: 250px;">
+            <select class="filter-select" id="categoryFilter" style="min-width: 150px;">
+                <option value="">All Categories</option>
+                <option value="Prevention">Prevention</option>
+                <option value="Wellness">Wellness</option>
+                <option value="Chronic">Chronic Diseases</option>
+                <option value="Mental">Mental Health</option>
+                <option value="Nutrition">Nutrition</option>
+            </select>
+        </div>
+    </div>
+</section>
+
+<!-- Topics Grid -->
+<section style="padding: 60px 20px;">
+    <div class="container">
+        <div class="cards-grid" id="topicsGrid">
+            {% for topic in topics %}
+            <div class="topic-card" data-category="{{ topic.category }}" data-title="{{ topic.title.lower() }}">
+                <div class="topic-card-header">
+                    {{ topic.icon }}
+                </div>
+                <div class="topic-card-body">
+                    <span style="display: inline-block; background: rgba(0, 184, 138, 0.1); color: var(--primary-color); padding: 4px 12px; border-radius: 20px; font-size: 12px; font-weight: 600; margin-bottom: 10px;">{{ topic.category }}</span>
+                    <h3>{{ topic.title }}</h3>
+                    <p>{{ topic.brief }}</p>
+                    <a href="{{ url_for('topic_detail', topic_id=topic.id) }}" style="color: var(--primary-color); text-decoration: none; font-weight: 600; display: inline-flex; align-items: center; gap: 8px; margin-top: 10px;">
+                        Learn More <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        
+        <!-- No Results Message -->
+        <div id="noResults" style="display: none; text-align: center; padding: 60px 20px;">
+            <i class="fas fa-search" style="font-size: 48px; color: var(--text-light); margin-bottom: 20px; display: block;"></i>
+            <h3 style="color: var(--text-dark);">No topics found</h3>
+            <p style="color: var(--text-light);">Try adjusting your search or filter criteria.</p>
+        </div>
+    </div>
+</section>
+
+<script>
+    // Search and Filter Functionality
+    const searchInput = document.getElementById('topicSearch');
+    const categoryFilter = document.getElementById('categoryFilter');
+    const topicsGrid = document.getElementById('topicsGrid');
+    const noResults = document.getElementById('noResults');
+    const cards = document.querySelectorAll('.topic-card');
+
+    function filterTopics() {
+        const searchTerm = searchInput.value.toLowerCase();
+        const selectedCategory = categoryFilter.value.toLowerCase();
+        let visibleCount = 0;
+
+        cards.forEach(card => {
+            const title = card.getAttribute('data-title');
+            const category = card.getAttribute('data-category').toLowerCase();
+            
+            const matchesSearch = title.includes(searchTerm);
+            const matchesCategory = !selectedCategory || category === selectedCategory;
+            
+            if (matchesSearch && matchesCategory) {
+                card.style.display = '';
+                visibleCount++;
+            } else {
+                card.style.display = 'none';
+            }
+        });
+
+        noResults.style.display = visibleCount === 0 ? 'block' : 'none';
+    }
+
+    searchInput.addEventListener('input', filterTopics);
+    categoryFilter.addEventListener('change', filterTopics);
+</script>
+
+{% endblock %}

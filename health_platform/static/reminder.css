@@ -1,0 +1,109 @@
+body {
+    background: #fafcff;
+    min-height: 100vh;
+}
+
+/* Dark mode overrides when `.dark-mode` is applied to the html element */
+.dark-mode body {
+    background: var(--neutral-bg);
+}
+
+.dark-mode .badge-custom {
+    background: #2a2a2a;
+    color: var(--text-dark);
+}
+
+.dark-mode .main-title {
+    color: var(--text-dark);
+}
+
+.dark-mode .subtitle {
+    color: var(--text-light);
+}
+
+.dark-mode .reminder-card {
+    background: #2a2a2a;
+    color: var(--text-dark);
+    box-shadow: var(--shadow-md);
+}
+
+.dark-mode .reminder-form h4 {
+    color: var(--text-dark);
+}
+
+.dark-mode .calendar-icon {
+    color: var(--primary-color);
+}
+
+.main-title {
+    margin-top: 64px;
+    font-weight: 700;
+    font-size: 2.5rem;
+    text-align: center;
+}
+
+.subtitle {
+    text-align: center;
+    color: #52677a;
+    font-size: 1.12rem;
+    margin-bottom: 24px;
+}
+
+.badge-custom {
+    background: #e7fff6;
+    color: #10b981;
+    font-weight: 700;
+    border-radius: 16px;
+    padding: 5px 18px;
+    display: block;
+    margin: 20px auto 0 auto;
+    width: fit-content;
+    text-align: center;
+}
+
+.reminder-card {
+    max-width: 600px;
+    margin: 40px auto 0 auto;
+    box-shadow: 0 6px 28px 0 #748cab18;
+    border-radius: 18px;
+    border: none;
+}
+
+.reminder-form {
+    padding: 36px 30px 18px 30px;
+}
+
+.set-btn {
+    margin: 32px 0 0 0;
+    border-radius: 8px;
+    font-size: 1.2rem;
+    height: 48px;
+}
+
+.form-group label {
+    font-weight: 500;
+}
+
+.calendar-icon {
+    color: #10b981;
+    font-size: 1.6rem;
+    margin-right: 8px;
+    vertical-align: middle;
+}
+
+.reminder-actions {
+    display: flex;
+    gap: 8px;
+    margin-top: 6px;
+}
+
+@media (max-width: 600px) {
+    .reminder-card {
+        max-width: 100%;
+        margin: 10px;
+    }
+
+    .reminder-form {
+        padding: 20px 10px;
+    }
+}

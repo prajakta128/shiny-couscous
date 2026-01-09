@@ -1,0 +1,150 @@
+{% extends "base.html" %}
+
+{% block title %}{{ hospital.hospital_name }}{% endblock %}
+
+{% block styles %}
+<style>
+  .hospital-detail-header {
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    color: white;
+    padding: 60px 20px;
+    margin-bottom: 40px;
+    border-radius: 12px;
+  }
+  .hospital-detail-header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+    font-weight: 700;
+  }
+  .hospital-detail-content {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 30px;
+    margin-bottom: 40px;
+  }
+  .info-section {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: var(--shadow-md);
+    margin-bottom: 20px;
+  }
+  .dark-mode .info-section {
+    background: #2a2a2a;
+  }
+  .info-section h3 {
+    color: var(--primary-color);
+    margin-bottom: 15px;
+    font-size: 1.3rem;
+    border-bottom: 2px solid var(--primary-color);
+    padding-bottom: 10px;
+  }
+  .info-item {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 15px;
+    align-items: flex-start;
+  }
+  .info-icon {
+    font-size: 1.4rem;
+    min-width: 24px;
+  }
+  .rating-badge {
+    background: rgba(0, 184, 138, 0.1);
+    color: var(--primary-color);
+    padding: 10px 15px;
+    border-radius: 20px;
+    font-weight: 600;
+    display: inline-block;
+  }
+  .action-buttons {
+    display: flex;
+    gap: 12px;
+    margin-top: 20px;
+  }
+  .action-btn {
+    flex: 1;
+    padding: 12px;
+    border-radius: 8px;
+    text-align: center;
+    font-weight: 600;
+    text-decoration: none;
+    transition: var(--transition);
+  }
+  .call-btn {
+    background: var(--accent-color);
+    color: white;
+  }
+  .call-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+  }
+  .back-btn {
+    background: var(--neutral-light);
+    color: var(--text-dark);
+  }
+  .back-btn:hover {
+    background: var(--text-dark);
+    color: white;
+  }
+  @media (max-width: 768px) {
+    .hospital-detail-content {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="hospital-detail-header">
+  <div class="container">
+    <h1>{{ hospital.hospital_name }}</h1>
+    <div class="rating-badge">⭐ {{ hospital.rating or 'N/A' }}</div>
+  </div>
+</div>
+
+<div class="container hospital-detail-content">
+  <div>
+    <div class="info-section">
+      <h3>📍 Location Details</h3>
+      <div class="info-item">
+        <span class="info-icon">🏢</span>
+        <div>
+          <strong>Address</strong><br>
+          {{ hospital.Full_Address or 'Not available' }}
+        </div>
+      </div>
+      <div class="info-item">
+        <span class="info-icon">📌</span>
+        <div>
+          <strong>Nearest Area</strong><br>
+          {{ hospital.Nearest_Location or 'Not available' }}
+        </div>
+      </div>
+    </div>
+    
+    <div class="info-section">
+      <h3>☎️ Contact Information</h3>
+      <div class="info-item">
+        <span class="info-icon">📞</span>
+        <div>
+          <strong>Phone</strong><br>
+          <a href="tel:{{ hospital.contact }}" style="color: var(--primary-color); text-decoration: none; font-weight: 600;">
+            {{ hospital.contact or 'Not available' }}
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div>
+    <div class="info-section">
+      <h3>⚡ Actions</h3>
+      <div class="action-buttons">
+        <a href="tel:{{ hospital.contact or '1234567890' }}" class="action-btn call-btn">📞 Call Now</a>
+        <a href="{{ url_for('hospital_list') }}" class="action-btn back-btn">⬅ Back</a>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

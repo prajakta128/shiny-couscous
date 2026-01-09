@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% block title %}AI Chatbot{% endblock %}
+{% block styles %}
+<link rel="stylesheet" href="{{ url_for('static', filename='chat.css') }}" />
+<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+{% endblock %}
+{% block content %}
+<div class="main-title">Health & Policy Chatbot</div>
+<div class="subtitle">Get instant answers to your health questions and government policy queries.</div>
+<div class="card chat-card">
+    <div class="card-header">
+        <span>Health Assistant</span>
+        <span
+            style="font-size: 0.95rem; margin-left: 14px; background: rgba(255,255,255,0.15); border-radius: 8px; padding: 3px 10px;">
+            AI Assistant
+        </span>
+        <div style="font-size: 0.93rem; font-weight: 400; margin-top: 4px;">
+            <span style="font-weight: 400;">Ask me anything about health, diseases, or government schemes</span>
+        </div>
+    </div>
+    <div class="system-message">
+        Hello! I'm your health assistant. You can ask me about:<br>
+        <ul style="margin-top:6px;">
+            <li>Disease symptoms and prevention</li>
+            <li>Government health schemes</li>
+            <li>Hospital recommendations</li>
+            <li>Healthy lifestyle tips</li>
+        </ul>
+    </div>
+    <div id="messages" class="message-list d-flex flex-column"></div>
+    <div class="chatbox-footer">
+        <input type="text" id="userInput" class="form-control" placeholder="Type your health question here..."
+            onkeydown="if(event.key==='Enter'){sendMessage()}" />
+        <button id="sendBtn" onclick="sendMessage()">&#9658;</button>
+    </div>
+</div>
+<script src="{{ url_for('static', filename='script/chat.js') }}"></script>
+{% endblock %}

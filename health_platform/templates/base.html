@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{% block title %}Health Platform{% endblock %}</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+    {% block styles %}{% endblock %}
+</head>
+
+<body>
+    <!-- Sticky Header Navigation -->
+    <header class="navbar-container">
+        <nav class="navbar">
+            <!-- Logo -->
+            <div class="navbar-logo">
+                <a href="/"><i class="fas fa-heartbeat"></i> HealthHub</a>
+            </div>
+
+            <!-- Navigation Links -->
+            <ul class="nav-menu">
+                <li><a href="/" class="nav-link">Home</a></li>
+                <li><a href="/chat" class="nav-link">AI Doctor</a></li>
+                <li><a href="/topics" class="nav-link">Health Topics</a></li>
+                <li><a href="/schemes" class="nav-link">Schemes</a></li>
+                <li><a href="/hospitals" class="nav-link">Hospitals</a></li>
+                <li><a href="/wellness" class="nav-link">Wellness</a></li>
+                <li><a href="/reminders" class="nav-link">Reminders</a></li>
+                <li><a href="/gym" class="nav-link">Gym Trainer</a></li>
+                <li><a href="/finance" class="nav-link">💳 Finance</a></li>
+            </ul>
+
+            <!-- Right Side: Theme Toggle & Emergency -->
+            <div class="navbar-right">
+                <button class="theme-toggle" id="themeToggle" title="Toggle Dark/Light Mode">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <a href="/emergency" class="emergency-btn" title="Dial 112 - Emergency Services">
+                    <i class="fas fa-phone"></i> Emergency
+                </a>
+            </div>
+
+            <!-- Hamburger Menu -->
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        {% block content %}{% endblock %}
+    </main>
+
+    
+    <!-- Scripts -->
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+    
+    <!-- Dark Mode Script -->
+    <script>
+        // Dark Mode Toggle
+        const themeToggle = document.getElementById('themeToggle');
+        const htmlElement = document.documentElement;
+        
+        // Function to apply dark mode styles to inline elements
+        function applyDarkModeInlineStyles(isDarkMode) {
+            const elements = document.querySelectorAll('[style*="color: white"]');
+            elements.forEach(el => {
+                if (isDarkMode) {
+                    if (el.style.color === 'white' || el.style.color === 'rgb(255, 255, 255)') {
+                        el.style.color = '#e8e8e8';
+                    }
+                } else {
+                    if (el.style.color === '#e8e8e8' || el.style.color === 'rgb(232, 232, 232)') {
+                        el.style.color = 'white';
+                    }
+                }
+            });
+        }
+        
+        // Load saved theme preference
+        function loadThemePreference() {
+            const savedTheme = localStorage.getItem('theme') || 'light';
+            if (savedTheme === 'dark') {
+                htmlElement.classList.add('dark-mode');
+                if (themeToggle) themeToggle.innerHTML = '<i class="fas fa-sun"></i>';
+                applyDarkModeInlineStyles(true);
+            }
+        }
+        
+        // Toggle theme
+        if (themeToggle) {
+            themeToggle.addEventListener('click', function(e) {
+                e.preventDefault();
+                htmlElement.classList.toggle('dark-mode');
+                
+                if (htmlElement.classList.contains('dark-mode')) {
+                    localStorage.setItem('theme', 'dark');
+                    themeToggle.innerHTML = '<i class="fas fa-sun"></i>';
+                    applyDarkModeInlineStyles(true);
+                } else {
+                    localStorage.setItem('theme', 'light');
+                    themeToggle.innerHTML = '<i class="fas fa-moon"></i>';
+                    applyDarkModeInlineStyles(false);
+                }
+            });
+        }
+        
+        // Load preference on page load
+        loadThemePreference();
+    </script>
+    
+    {% block scripts %}{% endblock %}
+</body>
+
+</html> 
+

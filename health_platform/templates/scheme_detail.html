@@ -1,0 +1,189 @@
+{% extends "base.html" %}
+{% block title %}{{ scheme.name }}{% endblock %}
+{% block styles %}
+<style>
+  .scheme-detail-header {
+    background: linear-gradient(135deg, #0984e3 0%, #00b88a 100%);
+    color: white;
+    padding: 60px 20px;
+    margin-bottom: 40px;
+    border-radius: 12px;
+  }
+  .scheme-detail-header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+    font-weight: 700;
+  }
+  .scheme-badge {
+    background: rgba(255,255,255,0.3);
+    padding: 8px 16px;
+    border-radius: 20px;
+    display: inline-block;
+    margin-bottom: 10px;
+    font-size: 0.9rem;
+    font-weight: 600;
+  }
+  .scheme-detail-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 30px;
+    margin-bottom: 40px;
+  }
+  .scheme-card {
+    background: white;
+    padding: 35px;
+    border-radius: 12px;
+    box-shadow: var(--shadow-md);
+  }
+  .dark-mode .scheme-card {
+    background: #2a2a2a;
+  }
+  .scheme-card h2 {
+    color: var(--primary-color);
+    font-size: 1.6rem;
+    margin-bottom: 20px;
+    border-bottom: 3px solid var(--primary-color);
+    padding-bottom: 12px;
+  }
+  .scheme-card p {
+    line-height: 1.8;
+    margin-bottom: 15px;
+    color: var(--text-light);
+  }
+  .benefits-list {
+    list-style: none;
+    padding: 0;
+  }
+  .benefits-list li {
+    padding: 12px 0;
+    border-bottom: 1px solid var(--border-color);
+    color: var(--text-light);
+  }
+  .benefits-list li:last-child {
+    border-bottom: none;
+  }
+  .benefits-list li::before {
+    content: '✓';
+    color: var(--primary-color);
+    font-weight: 700;
+    margin-right: 12px;
+    font-size: 1.2rem;
+  }
+  .eligibility-box {
+    background: rgba(0, 184, 138, 0.1);
+    border-left: 4px solid var(--primary-color);
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+  }
+  .dark-mode .eligibility-box {
+    background: rgba(0, 184, 138, 0.15);
+  }
+  .eligibility-box h4 {
+    color: var(--primary-color);
+    margin-bottom: 10px;
+  }
+  .sidebar-info {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: var(--shadow-md);
+    position: sticky;
+    top: 100px;
+    height: fit-content;
+  }
+  .dark-mode .sidebar-info {
+    background: #2a2a2a;
+  }
+  .sidebar-info h4 {
+    color: var(--primary-color);
+    margin-bottom: 15px;
+    font-size: 1.1rem;
+  }
+  .info-item {
+    padding: 10px 0;
+    border-bottom: 1px solid var(--border-color);
+    font-size: 0.95rem;
+  }
+  .info-item:last-child {
+    border-bottom: none;
+  }
+  .back-link {
+    display: inline-block;
+    background: var(--primary-color);
+    color: white;
+    padding: 12px 25px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: var(--transition);
+  }
+  .back-link:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-lg);
+  }
+  @media (max-width: 768px) {
+    .scheme-detail-grid {
+      grid-template-columns: 1fr;
+    }
+    .sidebar-info {
+      position: static;
+    }
+  }
+</style>
+{% endblock %}
+{% block content %}
+<div class="scheme-detail-header">
+  <div class="container">
+    <div class="scheme-badge">💼 Government Scheme</div>
+    <h1>{{ scheme.name }}</h1>
+  </div>
+</div>
+
+<div class="container scheme-detail-grid">
+  <div>
+    <div class="scheme-card">
+      <h2>📋 Overview</h2>
+      <p>{{ scheme.description }}</p>
+    </div>
+    
+    <div class="scheme-card">
+      <h2>💡 Key Benefits</h2>
+      <ul class="benefits-list">
+        {% for b in scheme.benefits %}
+        <li>{{ b }}</li>
+        {% endfor %}
+      </ul>
+    </div>
+    
+    <div class="scheme-card">
+      <div class="eligibility-box">
+        <h4>👤 Eligibility Criteria</h4>
+        <p>{{ scheme.eligibility }}</p>
+      </div>
+    </div>
+    
+    <a href="{{ url_for('schemes') }}" class="back-link">⬅ Back to Schemes</a>
+  </div>
+  
+  <aside>
+    <div class="sidebar-info">
+      <h4>ℹ️ Scheme Details</h4>
+      <div class="info-item">
+        <strong>Type:</strong><br>
+        <small>Government Initiative</small>
+      </div>
+      <div class="info-item">
+        <strong>Status:</strong><br>
+        <small>✅ Active</small>
+      </div>
+      <div class="info-item">
+        <strong>Category:</strong><br>
+        <small>Health & Welfare</small>
+      </div>
+    </div>
+  </aside>
+</div>
+{% endblock %} 
+
+
