@@ -20,8 +20,3 @@ Visit: http://localhost:8080
 
 ---
 
-✅ **You're done!**
-
-Just create the folder structure and paste all the code above into the correct files.
-
-Let me know if you want this as a ZIP or need help deploying it.
